@@ -1,70 +1,321 @@
-% Use this file for citations not found in the ACL Anthology (contained in "anthology.bib").
-
-@book{Aho:72,
-    author  = {Alfred V. Aho and Jeffrey D. Ullman},
-    title   = {The Theory of Parsing, Translation and Compiling},
-    year    = "1972",
-    volume  = "1",
-    publisher = {Prentice-Hall},
-    address = {Englewood Cliffs, NJ}
+@misc{NIPS2017_cb8da676,
+ author = {Snell, Jake and Swersky, Kevin and Zemel, Richard},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Prototypical Networks for Few-shot Learning},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2017/file/cb8da6767461f2812ae4290eac7cbc42-Paper.pdf},
+ volume = {30},
+ year = {2017}
 }
 
-@book{APA:83,
-    author  = {{American Psychological Association}},
-    title   = {Publications Manual},
-    year    = "1983",
-    publisher = {American Psychological Association},
-    address = {Washington, DC}
+@inproceedings{sun-etal-2019-hierarchical,
+    title = "Hierarchical Attention Prototypical Networks for Few-Shot Text Classification",
+    author = "Sun, Shengli  and
+      Sun, Qingfeng  and
+      Zhou, Kevin  and
+      Lv, Tengchao",
+    editor = "Inui, Kentaro  and
+      Jiang, Jing  and
+      Ng, Vincent  and
+      Wan, Xiaojun",
+    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)",
+    month = nov,
+    year = "2019",
+    address = "Hong Kong, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D19-1045/",
+    doi = "10.18653/v1/D19-1045",
+    pages = "476--485",
+    abstract = "Most of the current effective methods for text classification tasks are based on large-scale labeled data and a great number of parameters, but when the supervised training data are few and difficult to be collected, these models are not available. In this work, we propose a hierarchical attention prototypical networks (HAPN) for few-shot text classification. We design the feature level, word level, and instance level multi cross attention for our model to enhance the expressive ability of semantic space, so it can highlight or weaken the importance of the features, words, and instances separately. We verify the effectiveness of our model on two standard benchmark few-shot text classification datasets{---}FewRel and CSID, and achieve the state-of-the-art performance. The visualization of hierarchical attention layers illustrates that our model can capture more important features, words, and instances. In addition, our attention mechanism increases support set augmentability and accelerates convergence speed in the training stage."
 }
 
-@article{Chandra:81,
-	author = {Ashok K. Chandra and Dexter C. Kozen and Larry J. Stockmeyer},
-	year = "1981",
-	title = {Alternation},
-	journal = {Journal of the Association for Computing Machinery},
-	volume = "28",
-	number = "1",
-	pages = "114--133",
-	doi = "10.1145/322234.322243",
+
+@Article{electronics11152423,
+    AUTHOR = {Guo, Xinyu and Tian, Bingjie and Tian, Xuedong},
+    TITLE = {HFGNN-Proto: Hesitant Fuzzy Graph Neural Network-Based Prototypical Network for Few-Shot Text Classification},
+    JOURNAL = {Electronics},
+    VOLUME = {11},
+    YEAR = {2022},
+    NUMBER = {15},
+    ARTICLE-NUMBER = {2423},
+    URL = {https://www.mdpi.com/2079-9292/11/15/2423},
+    ISSN = {2079-9292},
+    ABSTRACT = {Few-shot text classification aims to recognize new classes with only a few labeled text instances. Previous studies mainly utilized text semantic features to model the instance-level relation among partial samples. However, the single relation information makes it difficult for many models to address complicated natural language tasks. In this paper, we propose a novel hesitant fuzzy graph neural network (HFGNN) model that explores the multi-attribute relations between samples. We combine HFGNN with the Prototypical Network to achieve few-shot text classification. In HFGNN, multiple relations between texts, including instance-level and distribution-level relations, are discovered through dual graph neural networks and fused by hesitant fuzzy set (HFS) theory. In addition, we design a linear function that maps the fused relations to a more reasonable range in HFGNN. The final relations are used to aggregate the information of neighbor instance nodes in the graph to construct more discriminative instance features. Experimental results demonstrate that the classification accuracy of the HFGNN-based Prototypical Network (HFGNN-Proto) on the ARSC, FewRel 5-way 5-shot, and FewRel 10-way 5-shot datasets reaches 88.36%, 94.45%, and 89.40%, respectively, exceeding existing state-of-the-art few-shot learning methods.},
+    DOI = {10.3390/electronics11152423}
 }
 
-@inproceedings{andrew2007scalable,
-  title={Scalable training of {L1}-regularized log-linear models},
-  author={Andrew, Galen and Gao, Jianfeng},
-  booktitle={Proceedings of the 24th International Conference on Machine Learning},
-  pages={33--40},
-  year={2007},
+@misc{Sourati2023-bq,
+  title        = "Robust text classification: Analyzing {Prototype-Based}
+                  Networks",
+  author       = "Sourati, Zhivar and Deshpande, Darshan and Ilievski, Filip
+                  and Gashteovski, Kiril and Saralajew, Sascha",
+  abstract     = "Downstream applications often require text classification
+                  models to be accurate and robust. While the accuracy of the
+                  state-of-the-art Language Models (LMs) approximates human
+                  performance, they often exhibit a drop in performance on
+                  noisy data found in the real world. This lack of robustness
+                  can be concerning, as even small perturbations in the text,
+                  irrelevant to the target task, can cause classifiers to
+                  incorrectly change their predictions. A potential solution
+                  can be the family of Prototype-Based Networks (PBNs) that
+                  classifies examples based on their similarity to prototypical
+                  examples of a class (prototypes) and has been shown to be
+                  robust to noise for computer vision tasks. In this paper, we
+                  study whether the robustness properties of PBNs transfer to
+                  text classification tasks under both targeted and static
+                  adversarial attack settings. Our results show that PBNs, as a
+                  mere architectural variation of vanilla LMs, offer more
+                  robustness compared to vanilla LMs under both targeted and
+                  static settings. We showcase how PBNs' interpretability can
+                  help us to understand PBNs' robustness properties. Finally,
+                  our ablation studies reveal the sensitivity of PBNs'
+                  robustness to how strictly clustering is done in the training
+                  phase, as tighter clustering results in less robust PBNs.",
+  year         =  2023,
+  primaryClass = "cs.CL",
+  eprint       = "2311.06647"
 }
 
-@book{Gusfield:97,
-    author  = {Dan Gusfield},
-    title   = {Algorithms on Strings, Trees and Sequences},
-    year    = "1997",
-    publisher = {Cambridge University Press},
-    address = {Cambridge, UK}
+
+@ARTICLE{Liu2025-gf,
+  title     = "Guiding Prototype Networks with label semantics for few-shot
+               text classification",
+  author    = "Liu, Xinyue and Gao, Yunlong and Zong, Linlin and Liang, Wenxin
+               and Xu, Bo",
+  journal   = "Pattern Recognit.",
+  publisher = "Elsevier BV",
+  volume    =  164,
+  number    =  111497,
+  pages     = "111497",
+  month     =  aug,
+  year      =  2025,
+  language  = "en"
 }
 
-@article{rasooli-tetrault-2015,
-    author    = {Mohammad Sadegh Rasooli and Joel R. Tetreault},
-    title     = {Yara Parser: {A} Fast and Accurate Dependency Parser},
-    journal   = {Computing Research Repository},
-    volume    = {arXiv:1503.06733},
-    year      = {2015},
-    url       = {http://arxiv.org/abs/1503.06733},
-    note    = {version 2}
+@INPROCEEDINGS{5566113,
+  author={Kuang, Qiaoyan and Xu, Xiaoming},
+  booktitle={2010 International Conference on Internet Technology and Applications}, 
+  title={Improvement and Application of TF•IDF Method Based on Text Classification}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={1-4},
+  keywords={Classification algorithms;Feature extraction;Text categorization;Computers;Support vector machine classification;Sensitivity;Economics},
+  doi={10.1109/ITAPP.2010.5566113}}
+
+@ARTICLE{Yun-tao2005-vn,
+  title     = "An improved {TF-IDF} approach for text classification",
+  author    = "Yun-tao, Zhang and Ling, Gong and Yong-cheng, Wang",
+  journal   = "J. Zheijang Univ.-Sci. A",
+  publisher = "Zhejiang University Press",
+  volume    =  6,
+  number    =  1,
+  pages     = "49--55",
+  month     =  aug,
+  year      =  2005,
+  copyright = "https://www.springernature.com/gp/researchers/text-and-data-mining",
+  language  = "en"
 }
 
-@article{Ando2005,
-	Acmid = {1194905},
-	Author = {Ando, Rie Kubota and Zhang, Tong},
-	Issn = {1532-4435},
-	Issue_Date = {12/1/2005},
-	Journal = {Journal of Machine Learning Research},
-	Month = dec,
-	Numpages = {37},
-	Pages = {1817--1853},
-	Publisher = {JMLR.org},
-	Title = {A Framework for Learning Predictive Structures from Multiple Tasks and Unlabeled Data},
-	Volume = {6},
-	Year = {2005}
+@misc{devlin2019bertpretrainingdeepbidirectional,
+      title={BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}, 
+      author={Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova},
+      year={2019},
+      eprint={1810.04805},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1810.04805}, 
+}
+
+@misc{hou2022closerlookprototypeclassifier,
+      title={A Closer Look at Prototype Classifier for Few-shot Image Classification}, 
+      author={Mingcheng Hou and Issei Sato},
+      year={2022},
+      eprint={2110.05076},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2110.05076}, 
+}
+
+@misc{zhou2015clstmneuralnetworktext,
+      title={A C-LSTM Neural Network for Text Classification}, 
+      author={Chunting Zhou and Chonglin Sun and Zhiyuan Liu and Francis C. M. Lau},
+      year={2015},
+      eprint={1511.08630},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1511.08630}, 
+}
+
+@article{JAMSHIDI2024102306,
+title = {Effective text classification using BERT, MTM LSTM, and DT},
+journal = {Data and Knowledge Engineering},
+volume = {151},
+pages = {102306},
+year = {2024},
+issn = {0169-023X},
+doi = {https://doi.org/10.1016/j.datak.2024.102306},
+url = {https://www.sciencedirect.com/science/article/pii/S0169023X24000302},
+author = {Saman Jamshidi and Mahin Mohammadi and Saeed Bagheri and Hamid Esmaeili Najafabadi and Alireza Rezvanian and Mehdi Gheisari and Mustafa Ghaderzadeh and Amir Shahab Shahabi and Zongda Wu},
+keywords = {Text classification, Artificial neural networks, BERT, Many to Many LSTM, Decision templates},
+abstract = {Text classification plays a critical role in managing large volumes of electronically produced texts. As the number of such texts increases, manual analysis becomes impractical, necessitating an intelligent approach for processing information. Deep learning models have witnessed widespread application in text classification, including the use of recurrent neural networks like Many to One Long Short-Term Memory (MTO LSTM). Nonetheless, this model is limited by its reliance on only the last token for text labelling. To overcome this limitation, this study introduces a novel hybrid model that combines Bidirectional Encoder Representations from Transformers (BERT), Many To Many Long Short-Term Memory (MTM LSTM), and Decision Templates (DT) for text classification. In this new model, the text is first embedded using the BERT model and then trained using MTM LSTM to approximate the target at each token. Finally, the approximations are fused using DT. The proposed model is evaluated using the well-known IMDB movie review dataset for binary classification and Drug Review Dataset for multiclass classification. The results demonstrate superior performance in terms of accuracy, recall, precision, and F1 score compared to previous models. The hybrid model presented in this study holds significant potential for a wide range of text classification tasks and stands as a valuable contribution to the field.}
+}
+
+@article{KAUR2023108699,
+title = {Improving BERT model for requirements classification by bidirectional LSTM-CNN deep model},
+journal = {Computers and Electrical Engineering},
+volume = {108},
+pages = {108699},
+year = {2023},
+issn = {0045-7906},
+doi = {https://doi.org/10.1016/j.compeleceng.2023.108699},
+url = {https://www.sciencedirect.com/science/article/pii/S0045790623001234},
+author = {Kamaljit Kaur and Parminder Kaur},
+keywords = {Requirements engineering, Software requirements, Requirements classification, Deep learning, Bidirectional LSTM, Convolutional neural network, Transfer learning, BERT},
+abstract = {In the last decade, requirements classification has emerged as hot research topic in Requirements Engineering (RE). Early identification of software requirements helps the development team in the design of software systems. Manual identification and classification of these requirements is time-consuming and labor-intensive task. To address this issue, machine and deep learning techniques have been studied for automatic classification of requirements. Furthermore, an efficient word embedding representation of the input data is a major concern in automatic approaches. This research work presents a novel requirements classification model that integrates Bidirectional Encoder Representations from Transformers (BERT) with Bidirectional Long-short Term Memory (BiLSTM) with Convolutional Neural Network (CNN) layer called BERT-BiCNN. In BERT-BiCNN, BERT is used as word embedding layer that extract the full combination of contextual semantics. BiLSTM obtains contextual information. The CNN mechanism has been employed to reduce the dimensionality of feature space by selecting the important features. The effectiveness of BERT-BiCNN is evaluated on the PROMISE dataset. On comparative analysis, it can be concluded that proposed approach outperforms six recent deep learning based architectures in binary and multi-class classification.}
+}
+
+@misc{liu2024optimizingnewstextclassification,
+      title={Optimizing News Text Classification with Bi-LSTM and Attention Mechanism for Efficient Data Processing}, 
+      author={Bingyao Liu and Jiajing Chen and Rui Wang and Junming Huang and Yuanshuai Luo and Jianjun Wei},
+      year={2024},
+      eprint={2409.15576},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2409.15576}, 
+}
+
+
+@Article{app14146282,
+AUTHOR = {Xiong, Yunpeng and Chen, Guolian and Cao, Junkuo},
+TITLE = {Research on Public Service Request Text Classification Based on BERT-BiLSTM-CNN Feature Fusion},
+JOURNAL = {Applied Sciences},
+VOLUME = {14},
+YEAR = {2024},
+NUMBER = {14},
+ARTICLE-NUMBER = {6282},
+URL = {https://www.mdpi.com/2076-3417/14/14/6282},
+ISSN = {2076-3417},
+ABSTRACT = {Convolutional neural networks (CNNs) face challenges in capturing long-distance text correlations, and Bidirectional Long Short-Term Memory (BiLSTM) networks exhibit limited feature extraction capabilities for text classification of public service requests. To address the abovementioned problems, this work utilizes an ensemble learning approach to integrate model elements efficiently. This study presents a method for classifying public service request text using a hybrid neural network model called BERT-BiLSTM-CNN. First, BERT (Bidirectional Encoder Representations from Transformers) is used for preprocessing to obtain text vector representations. Then, context and process sequence information are captured through BiLSTM. Next, local features in the text are captured through CNN. Finally, classification results are obtained through Softmax. Through comparative analysis, the method of fusing these three models is superior to other hybrid neural network model architectures in multiple classification tasks. It has a significant effect on public service request text classification.},
+DOI = {10.3390/app14146282}
+}
+
+@article{Sachan_2019,
+   title={Revisiting LSTM Networks for Semi-Supervised Text Classification via Mixed Objective Function},
+   volume={33},
+   ISSN={2159-5399},
+   url={http://dx.doi.org/10.1609/aaai.v33i01.33016940},
+   DOI={10.1609/aaai.v33i01.33016940},
+   number={01},
+   journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+   publisher={Association for the Advancement of Artificial Intelligence (AAAI)},
+   author={Sachan, Devendra Singh and Zaheer, Manzil and Salakhutdinov, Ruslan},
+   year={2019},
+   month=jul }
+
+@misc{kim2014convolutionalneuralnetworkssentence,
+      title={Convolutional Neural Networks for Sentence Classification}, 
+      author={Yoon Kim},
+      year={2014},
+      eprint={1408.5882},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1408.5882}, 
+}
+
+@misc{beck2024xlstmextendedlongshortterm,
+      title={xLSTM: Extended Long Short-Term Memory}, 
+      author={Maximilian Beck and Korbinian Pöppel and Markus Spanring and Andreas Auer and Oleksandra Prudnikova and Michael Kopp and Günter Klambauer and Johannes Brandstetter and Sepp Hochreiter},
+      year={2024},
+      eprint={2405.04517},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2405.04517}, 
+}
+
+@misc{Ferlatti, title={Estimation of text complexity}, url={https://medium.com/@ferlatti.aldo/estimation-of-text-complexity-c113d111e29f}, journal={Medium}, author={Ferlatti, Aldo}} 
+
+@INPROCEEDINGS{Xue2022-pw,
+  title      = "The study on the text classification based on graph
+                convolutional network and {BiLSTM}",
+  booktitle  = "Proceedings of the 8th International Conference on Computing
+                and Artificial Intelligence",
+  author     = "Xue, Bingxin and Zhu, Cui and Wang, Xuan and Zhu, Wenjun",
+  publisher  = "ACM",
+  month      =  mar,
+  year       =  2022,
+  address    = "New York, NY, USA",
+  conference = "ICCAI '22: 2022 8th International Conference on Computing and
+                Artificial Intelligence",
+  location   = "Tianjin China"
+}
+
+@INPROCEEDINGS{8270269,
+  author={Gallo, Ignazio and Nawaz, Shah and Calefati, Alessandro},
+  booktitle={2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR)}, 
+  title={Semantic Text Encoding for Text Classification Using Convolutional Neural Networks}, 
+  year={2017},
+  volume={05},
+  number={},
+  pages={16-21},
+  keywords={Encoding;Visualization;Semantics;Kernel;Image coding;Support vector machines;Convolutional neural networks;text encoding;word2vec;deep convolutional neural network;text documents classification},
+  doi={10.1109/ICDAR.2017.323}}
+
+@article{Kachare_Goswami_Gupta_Chouhan_2025, title={FNet-GPT: Fourier-based lightweight transformer for emotion-aware text generation using GPT}, volume={4}, url={https://fupubco.com/futech/article/view/459}, abstractNote={&amp;lt;p&amp;gt;Neural story generation models have two significant challenges: (1) coherence over narrative structure, especially long-range dependencies, and (2) emotional coherence and consistency, generally producing redundant or incoherent narration. A new, emotionally intelligent two-stage short story generation model is presented by combining GPT-2 with a tailored FNET model, a light transformer architecture substituting standard self-attention with Fourier Transform layers to improve semantic and emotional relationship capture in text. The first stage employs GPT-2 to generate a list of input candidate sentences, a question, an answer, and an emotional state. The candidate sentences are then filtered using an emotion classifier from DistilRoBERTa to keep only those that adhere to a desired emotional tone. The filtered sentences are then fed into a fine-tuned  FNET model, which examines inter-sentence relationships and enforces emotional coherence to generate a coherent and emotionally engaging narrative. An empirical comparison using three benchmark datasets demonstrates the system’s superiority over earlier state-of-the-art approaches. The FNET model achieves 0.3093 in BLEU-1, outperforming Plan-and-Write (0.0953) and T-CVAE (0.2574), with an enhanced narrative quality and lexical coherence with human-written narratives. The story coherence and emotion retention accuracies are 85%, 67%, and 60%  for Visual7W, ROCStories, and Cornell Movie Dialogs datasets.&amp;lt;/p&amp;gt;}, number={4}, journal={Future Technology }, author={Kachare, Atul and Goswami, Chandrashekhar and Gupta, Ashutosh and Chouhan, D.S.}, year={2025}, month={Aug.}, pages={138–145} }
+
+@article{JI202081,
+title = {Improved prototypical networks for few-Shot learning},
+journal = {Pattern Recognition Letters},
+volume = {140},
+pages = {81-87},
+year = {2020},
+issn = {0167-8655},
+doi = {https://doi.org/10.1016/j.patrec.2020.07.015},
+url = {https://www.sciencedirect.com/science/article/pii/S0167865520302610},
+author = {Zhong Ji and Xingliang Chai and Yunlong Yu and Yanwei Pang and Zhongfei Zhang},
+keywords = {Image classification, Attention network, Few-Shot learning, Metric learning},
+abstract = {Few-Shot Learning (FSL) aims at recognizing the target classes that only a few samples are available for training. The current approaches mostly address FSL by learning a generalized class-level metric while neglect the intra-class distribution information. In this work, we propose Improved Prototypical Networks (IPN) to address this issue. Inspired by the observation that the intra-class samples differ greatly in revealing the class distribution, we first propose an attention-analogous strategy to explore the class distribution information by distributing different weights to samples based on their representativeness. Besides, to further explore the discriminative information across classes, we propose a distance scaling strategy to reduce the intra-class difference while enlarge the inter-class difference. The experimental results on two benchmark datasets show the superiority of the proposed model against the state-of-the-art approaches.}
+}
+
+@InProceedings{Pahde_2021_WACV,
+    author    = {Pahde, Frederik and Puscas, Mihai and Klein, Tassilo and Nabi, Moin},
+    title     = {Multimodal Prototypical Networks for Few-Shot Learning},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2021},
+    pages     = {2644-2653}
+}
+
+@BOOK{Adam2010-qj,
+  title     = "The republic of Plato: Books {VI-X} and indexes volume 2",
+  editor    = "Adam, J",
+  abstract  = "James Adam (1860--1907) was a Scottish classics scholar who
+               taught at Emmanuel College, Cambridge. A strong defender of the
+               importance of Greek philosophy in a well-rounded education, Adam
+               published a number of Plato's works including Protagoras and
+               Crito. This two-volume critical edition of the Republic (1902)
+               was another major contribution to the field. Though his preface
+               claims 'an editor cannot pretend to have exhausted its
+               significance by means of a commentary,' Adam's depth of
+               knowledge and erudite analysis of the Greek text ensured that
+               his edition remained the standard reference for decades to
+               follow, and it remains a thought-provoking evaluation of one of
+               the great works of Western thought. Volume 2 examines Books
+               6--10, which discuss the place of the philosopher and questions
+               of governance.",
+  publisher = "Cambridge University Press",
+  month     =  oct,
+  year      =  2010,
+  address   = "Cambridge, England"
+}
+
+@misc{pereira2025classifying,
+  author       = {Aaron Pereira},
+  title        = {Classifying Research project themes in the EC CORDIS database with the help of LLMs},
+  howpublished = {\url{http://solid-sustainability.org/topic-classification}},
+  year         = {2025},
+  month        = mar,
+  note         = {Solid Sustainability Research, published 16 March 2025}
 }

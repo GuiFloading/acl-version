@@ -30,6 +30,10 @@
 %Including images in your LaTeX document requires adding
 %additional package(s)
 \usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{pgf}
+\usepackage{amsmath}
+\providecommand{\mathdefault}[1]{#1}
 
 % If the title and author information does not fit in the area allocated, uncomment the following
 %
@@ -37,7 +41,7 @@
 %
 % and set <dim> to something 5cm or larger.
 
-\title{Instructions for *ACL Proceedings}
+\title{Ensemble Models for K-Shot ProtoNets}
 
 % Author information can be set in various styles:
 % For several authors from the same institution:
@@ -56,15 +60,9 @@
 %         Author 3 \\ Address line \\ ... \\ Address line}
 
 \author{First Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  \texttt{email@domain} \\\And
-  Second Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  \texttt{email@domain} \\}
+  Fontys University of Applied Sciences \\
+  \texttt{g.pintodeoliveira@student.fontys.nl}
+}
 
 %\author{
 %  \textbf{First Author\textsuperscript{1}},
@@ -107,271 +105,263 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This document is a supplement to the general instructions for *ACL authors. It contains instructions for using the \LaTeX{} style files for ACL conferences.
-The document itself conforms to its own specifications, and is therefore an example of what your manuscript should look like.
-These instructions should be used both for papers submitted for review and for final versions of accepted papers.
+  Few-shot classification with Prototypical Networks is an established method for cases with limited labelled data, or for expanding classifiable classes within a solution. However, the effects and potential for ensemble models to improve accuracy on text classification is still untapped.
+  To advance the understanding of few-shot text classification using Prototypical Networks and ensemble models, this paper proposes training different architectures comprised of famous text classification neural network techniques and Prototypical Networks. Furthermore, it trains the models on an unclean and cleaned version of the dataset.
+  The observable results show that the ensemble models are often not statistically significantly better than the base ProtoNet. However, some conditions do produce significantly better results on ensemble architectures.
+  The cleaned version of the dataset has significant improvements across the board, but it especially boosts the ensemble models performance.
+  This paper sets the groundwork for future research into the potential benefits of ensemble models for text few-shot binary classification. 
 \end{abstract}
 
 \section{Introduction}
+  Our intuition within the field of AI would tell us that 20 data points is not enough data to train an accurate model, but the field of Few-Shot or k-shot\footnote{k-shot classification where k is the number of labelled examples a given model is trained on} classification has challenged this presupposition by training accurate models using a small number of training data points, both for image\cite{NIPS2017_cb8da676, hou2022closerlookprototypeclassifier, JI202081} and text\cite{sun-etal-2019-hierarchical, electronics11152423, Sourati2023-bq, Liu2025-gf} and even for both\cite{Pahde_2021_WACV}.
+  One technique which stands effective is the Prototypical Network.
 
-These instructions are for authors submitting papers to *ACL conferences using \LaTeX. They are not self-contained. All authors must follow the general instructions for *ACL proceedings,\footnote{\url{http://acl-org.github.io/ACLPUB/formatting.html}} and this document contains additional instructions for the \LaTeX{} style files.
+  For more in-depth information about ProtoNets, refer to the paper that introduces it\cite{NIPS2017_cb8da676}.
+  This approach to few-shot classification has demonstrated positive results for image\cite{NIPS2017_cb8da676,hou2022closerlookprototypeclassifier, JI202081} and text classification\cite{sun-etal-2019-hierarchical,electronics11152423,Sourati2023-bq,Liu2025-gf}. It is a useful classifier for when there is a limited amount of labelled data or use cases for which there is need to easily add unseen classes in the future.
 
-The templates include the \LaTeX{} source of this document (\texttt{acl\_latex.tex}),
-the \LaTeX{} style file used to format it (\texttt{acl.sty}),
-an ACL bibliography style (\texttt{acl\_natbib.bst}),
-an example bibliography (\texttt{custom.bib}),
-and the bibliography for the ACL Anthology (\texttt{anthology.bib}).
+  But the literature rarely attempts to ensemble other models onto it, and its validation sets are comprised of simple use cases. In the real world, we often handle data of complex language and great length. This paper asks how much could a Prototypical Network model improve if assembled with other popular techniques, applied on a complex corpus.
+  One could posit that more complex architectures could potentially improve the models ability to find relations within n-grams and between sentences more effectively. This paper will attempt to prove the null hypothesis; that more complex models affect the accuracy of a Prototypical Network. It will also be exploring the effect of processing the data in a manner of which n-grams are always relevant to the corpus\cite{Yun-tao2005-vn, 5566113}.
+  However, complex architectures may potentially not impact, and perhaps penalise, accuracy. Whether due to noise introduced by transposition layers or because of overfitting, complex models can indeed make things worse. When exploring ensemble models, one must assume this to be the null hypothesis, and have a reason to challenge it.
+  Throughout the literature that introduces novel methods for text classification, it is standard to use known datasets for validation, like FewRel\cite{sun-etal-2019-hierarchical} or IMDB reviews\cite{Sourati2023-bq}, whose corpus often lacks the complexity found in the academic sphere.
+  We can take as evidence for this challenge the generated tags attributed to projects in the HORIZON portal. These often are inaccurate or lacking. And although their methods are unknown, one can hypothesise that the complexity of the sentence structure and vocabulary will affect any NLP and word-vector based task.
+  Therefore, exploring the effect of more complex architectures, which are proven to be capable of capturing n-gram and cross-sentence relations, would arguably be a valid question.
+  This paper aims to provide evidence that these complex architectures are worth investigating, by means of testing their performance on HORIZON projects, which feature PhD levels of corpus complexity (see Figure~\ref{table:classDesc}).
 
-\section{Engines}
+  The conducted research also introduces a new technique within NLP and RNNs called xLSTM\cite{beck2024xlstmextendedlongshortterm}, which shows promising results for NLP and vastly improve on the commonly used for classification LSTM\cite{Sachan_2019, app14146282, liu2024optimizingnewstextclassification, KAUR2023108699, JAMSHIDI2024102306, zhou2015clstmneuralnetworktext}.
+  With the introduction of ensemble models into the Prototypical Network, and the use of novel methods like xLSTM, this paper situates itself within the field of few-shot text classification, and ensemble architecture modelling. The lack of studies on ensemble models in Prototypical Networks is a research gap that this study aims to contribute in its filling.
 
-To produce a PDF file, pdf\LaTeX{} is strongly recommended (over original \LaTeX{} plus dvips+ps2pdf or dvipdf).
-The style file \texttt{acl.sty} can also be used with
-lua\LaTeX{} and
-Xe\LaTeX{}, which are especially suitable for text in non-Latin scripts.
-The file \texttt{acl\_lualatex.tex} in this repository provides
-an example of how to use \texttt{acl.sty} with either
-lua\LaTeX{} or
-Xe\LaTeX{}.
+\section{Methods}
 
-\section{Preamble}
+For the purposes of this research, I used a dataset of labelled projects from the publicly available EU CORDIS research database\footnote{The raw data was downloaded in October 2024. The current data is available at data.cordis.eu. The labelled data used in this paper is available at solid-sustainability.org/ccus-tables, solid-sustainability.org/h2-tables, and solid-sustainability.org/solar-tables.}.
+In order to methodically explore the possibilities of expansion, it prompts to be addressed the complexity of the dataset. Our dataset contains complex academic jargon, compared to the more common lexicon in most public validation datasets used in the literature.
+\footnote{By simple task, it is meant to signify a classification task on which the text data uses common sentence structures and vocabulary e.g.~sentiment analysis of short sentences, relational, etc. This distinction is made because the descriptions of the projects are often filled with academic jargon and complex sentence structures.}
+This means that the text used through this paper will be more complex than the datasets utilised in most
+literature on Prototypical Networks for text classification\cite{sun-etal-2019-hierarchical,electronics11152423,Sourati2023-bq}.
+To tend for this contrast, there will be a trial without and with preprocessing of the projects descriptions, henceforth known as the raw and processed version of the dataset. Therefore, some parts of the preprocessing sub-section of this chapter will only apply to the trial in which the descriptions have been preprocessed. This distinction shall be made obvious.
+\subsection{Data}
+\subsubsection{Characterisation}
 
-The first line of the file must be
-\begin{quote}
-\begin{verbatim}
-\documentclass[11pt]{article}
-\end{verbatim}
-\end{quote}
-
-To load the style file in the review version:
-\begin{quote}
-\begin{verbatim}
-\usepackage[review]{acl}
-\end{verbatim}
-\end{quote}
-For the final version, omit the \verb|review| option:
-\begin{quote}
-\begin{verbatim}
-\usepackage{acl}
-\end{verbatim}
-\end{quote}
-
-To use Times Roman, put the following in the preamble:
-\begin{quote}
-\begin{verbatim}
-\usepackage{times}
-\end{verbatim}
-\end{quote}
-(Alternatives like txfonts or newtx are also acceptable.)
-
-Please see the \LaTeX{} source of this document for comments on other packages that may be useful.
-
-Set the title and author using \verb|\title| and \verb|\author|. Within the author list, format multiple authors using \verb|\and| and \verb|\And| and \verb|\AND|; please see the \LaTeX{} source for examples.
-
-By default, the box containing the title and author names is set to the minimum of 5 cm. If you need more space, include the following in the preamble:
-\begin{quote}
-\begin{verbatim}
-\setlength\titlebox{<dim>}
-\end{verbatim}
-\end{quote}
-where \verb|<dim>| is replaced with a length. Do not set this length smaller than 5 cm.
-
-\section{Document Body}
-
-\subsection{Footnotes}
-
-Footnotes are inserted with the \verb|\footnote| command.\footnote{This is a footnote.}
-
-\subsection{Tables and figures}
-
-See Table~\ref{tab:accents} for an example of a table and its caption.
-\textbf{Do not override the default caption sizes.}
+The dataset is a combination of multiple datasets that were previously divided by their labels, of which are solar, solarPlus, hydrogen (H2) and Carbon Capture Utilisation and Storage (CCUS). 
+Solar is a subset of solarPlus. This was a decision by the researchers that labelled the dataset.
+These will be our classes. One project may be attributed with multiple labels.
+The dataset includes 121808 distinct projects, with their title, country, fossil partner (if relevant), start and end date and the label given by the researchers. Most importantly, they also contain a description of the project, which will be the singular feature on which the models will be trained.
 
 \begin{table}
   \centering
   \begin{tabular}{lc}
-    \hline
-    \textbf{Command} & \textbf{Output} \\
-    \hline
-    \verb|{\"a}|     & {\"a}           \\
-    \verb|{\^e}|     & {\^e}           \\
-    \verb|{\`i}|     & {\`i}           \\
-    \verb|{\.I}|     & {\.I}           \\
-    \verb|{\o}|      & {\o}            \\
-    \verb|{\'u}|     & {\'u}           \\
-    \verb|{\aa}|     & {\aa}           \\\hline
+      \hline
+        label & count \\
+        \hline
+        NL                    & 118027 \\
+        solar,solarPlus       & 1779   \\
+        H2                    & 915    \\
+        CCUS                  & 518    \\
+        solarPlus             & 357    \\
+        H2,solar,solarPlus    & 114    \\
+        CCUS,H2               & 49     \\
+        CCUS,solar,solarPlus  & 41     \\
+        CCUS,H2,solar,solarPlus & 8    \\
+        H2,solarPlus          & 2      \\\hline
   \end{tabular}
-  \begin{tabular}{lc}
-    \hline
-    \textbf{Command} & \textbf{Output} \\
-    \hline
-    \verb|{\c c}|    & {\c c}          \\
-    \verb|{\u g}|    & {\u g}          \\
-    \verb|{\l}|      & {\l}            \\
-    \verb|{\~n}|     & {\~n}           \\
-    \verb|{\H o}|    & {\H o}          \\
-    \verb|{\v r}|    & {\v r}          \\
-    \verb|{\ss}|     & {\ss}           \\
-    \hline
-  \end{tabular}
-  \caption{Example commands for accented characters, to be used in, \emph{e.g.}, Bib\TeX{} entries.}
-  \label{tab:accents}
+  \caption{Number of projects per label combination}\label{table:labels}
 \end{table}
 
-As much as possible, fonts in figures should conform
-to the document fonts. See Figure~\ref{fig:experiments} for an example of a figure and its caption.
+The biggest class is NL (n = 118027) which stands for Not Labelled, which will be treated as 0 in the binary classification. The biggest distinct class group is solar and solarPlus (n = 1779), followed by H2 (n = 915). The other distinct classes are CCUS (n = 518),
+solarPlus (n = 357).
 
-Using the \verb|graphicx| package graphics files can be included within figure
-environment at an appropriate point within the text.
-The \verb|graphicx| package supports various optional arguments to control the
-appearance of the figure.
-You must include it explicitly in the \LaTeX{} preamble (after the
-\verb|\documentclass| declaration and before \verb|\begin{document}|) using
-\verb|\usepackage{graphicx}|.
-
-\begin{figure}[t]
-  \includegraphics[width=\columnwidth]{example-image-golden}
-  \caption{A figure with a caption that runs for more than one line.
-    Example image is usually available through the \texttt{mwe} package
-    without even mentioning it in the preamble.}
-  \label{fig:experiments}
-\end{figure}
-
-\begin{figure*}[t]
-  \includegraphics[width=0.48\linewidth]{example-image-a} \hfill
-  \includegraphics[width=0.48\linewidth]{example-image-b}
-  \caption {A minimal working example to demonstrate how to place
-    two images side-by-side.}
-\end{figure*}
-
-\subsection{Hyperlinks}
-
-Users of older versions of \LaTeX{} may encounter the following error during compilation:
-\begin{quote}
-\verb|\pdfendlink| ended up in different nesting level than \verb|\pdfstartlink|.
-\end{quote}
-This happens when pdf\LaTeX{} is used and a citation splits across a page boundary. The best way to fix this is to upgrade \LaTeX{} to 2018-12-01 or later.
-
-\subsection{Citations}
+Additionally, it is observable in Table~\ref{table:labels} that the solar category never appears ungrouped. That is because solar is a subclass of solarPlus, according to the researchers that set the labels and carried out the labelling.
+Later on, all classes will be ungrouped, meaning that projects with multiple classes might appear in more than one dataset as a labelled data point.
 
 \begin{table*}
   \centering
-  \begin{tabular}{lll}
-    \hline
-    \textbf{Output}           & \textbf{natbib command} & \textbf{ACL only command} \\
-    \hline
-    \citep{Gusfield:97}       & \verb|\citep|           &                           \\
-    \citealp{Gusfield:97}     & \verb|\citealp|         &                           \\
-    \citet{Gusfield:97}       & \verb|\citet|           &                           \\
-    \citeyearpar{Gusfield:97} & \verb|\citeyearpar|     &                           \\
-    \citeposs{Gusfield:97}    &                         & \verb|\citeposs|          \\
-    \hline
-  \end{tabular}
-  \caption{\label{citation-guide}
-    Citation commands supported by the style file.
-    The style is based on the natbib package and supports all natbib citation commands.
-    It also supports commands defined in previous ACL style files for compatibility.
-  }
+    \begin{tabular}{lrrrrr}
+      \hline
+      class & \thead{AW \\ rate} & \thead{LFW \\ rate} & count & \thead{Avg word \\ count} & \thead{Median word \\ count} \\
+      \hline
+      CCUS & 21.3 & 5.3 & 616 & 267 & 276 \\
+      H2 & 21.8 & 4.6 & 1088 & 271 & 276 \\
+      solar & 21.1 & 4.5 & 1942 & 274 & 274 \\
+      solarPlus & 21.1 & 4.5 & 2301 & 277 & 275 \\
+      NL & 20.5 & 4.7 & 118027 & 277 & 274 \\
+      \hline
+    \end{tabular}
+    \caption{Analysis of corpus complexity per label}
+    \label{table:classDesc}
 \end{table*}
+The dataset for a given class is comprised of all of the data entries with that specific label, and all the other data entries of all the other classes plus the data entries with no label (NL = Not Labelled). 
 
-Table~\ref{citation-guide} shows the syntax supported by the style files.
-We encourage you to use the natbib styles.
-You can use the command \verb|\citet| (cite in text) to get ``author (year)'' citations, like this citation to a paper by \citet{Gusfield:97}.
-You can use the command \verb|\citep| (cite in parentheses) to get ``(author, year)'' citations \citep{Gusfield:97}.
-You can use the command \verb|\citealp| (alternative cite without parentheses) to get ``author, year'' citations, which is useful for using citations within parentheses (e.g. \citealp{Gusfield:97}).
+It is important to highlight how the average and median word count is pretty similar for all labels. This denotes that differences in accuracy that might occur on a dataset basis are not likely to be due to differences in text length.
 
-A possessive citation can be made with the command \verb|\citeposs|.
-This is not a standard natbib command, so it is generally not compatible
-with other style files.
+The complexity algorithm was calculated by the ratio of AW (Academic Words) and LFW (low frequency words)\cite{Ferlatti}.
+According to the Word Complexity ratio, all of the classes showcase a corpus at PHD level (ratio =< 5),
+which means that differences in accuracy may not be derived from complexity. For more details on how this ratio was calculated, refer to the cited paper.
 
-\subsection{References}
+However, it is worth noting that the CCUS class features a significantly higher rate of low frequency words than the rest ($\textit{p-value} < 0.05, p \approx 0.0002$). Contrastly, solarPlus has a significantly lower rate of LFW ($\textit{p-value} < 0.05, p \approx 0.007$).
+For AW, H2 uses significantly more academic jargon than the rest ($\textit{p-value} < 0.05, p \approx 0.03$). On the other hand, NL has significantly less academic jargon in its corpus ($\textit{p-value} < 0.05, p \approx 0.006$)
 
-\nocite{Ando2005,andrew2007scalable,rasooli-tetrault-2015}
+\subsubsection{Preprocessing}
 
-The \LaTeX{} and Bib\TeX{} style files provided roughly follow the American Psychological Association format.
-If your own bib file is named \texttt{custom.bib}, then placing the following before any appendices in your \LaTeX{} file will generate the references section for you:
-\begin{quote}
-\begin{verbatim}
+The dataset containing all the data is then separated into individual datasets where the projects with a given class are assigned a 1 and all the other projects are assigned a 0. This way, a project spanning multiple classes is included in the file for those classes as 1.
+
+There were two experiments carried with different versions of the same datasets.
+The Unclean
+version of the dataset will simply feature the datasets for each label containing only that designation and its untreated project description.
+
+Another version of those individual datasets, henceforth known as the Cleaned datasets, descriptions of the project were processed by using tf---idf\cite{5566113,Yun-tao2005-vn} with a weighted approach, where only the most important words (top k = 3000) are included.
+The features are extracted from the aggregate dataset, so as to capture not only key words relevant to a class, but also to include slang typical to academic text.
+The description of the projects, thus, becomes only a string of the most important words, ergo the most important words for a domain will repeat multiple times.
+
+With this, we get a dataset that is ready to be segmented and that can then be manipulated to achieve batches for fitting.
+
+\subsubsection{Preparation}
+The datasets undergo a 80/20 split. The split is done once and remains constant throughout all experiments, to ensure in latter stages that the 
+difference between accuracy is due to the changes in model architecture and weight initialisation only.
+This is done for all datasets.
+
+Training and validation sets are tokenised using BERT base uncased\cite{devlin2019bertpretrainingdeepbidirectional} due to its lightweight, yet capable and wildly available proportions.
+
+Random samples of the dataset are picked. \textbf{\textit{k}} number of examples for each class are drawn.
+Using those samples, a number of examples are derived
+from \textbf{\textit{k}} plus the query number (n=15), with which is selected from the general dataset that number of examples for each distinct class at random.
+
+\subsection{Architectures}
+This paper attempts to experiment with ensemble models, in order to capture the complexity of the dataset. The hypothesis tested is that the complexity of the dataset should be dealt with a proportionately complex model architecture.
+LSTMs\cite{JAMSHIDI2024102306,liu2024optimizingnewstextclassification,Sachan_2019}, CNNs\cite{kim2014convolutionalneuralnetworkssentence} and their ensemble\cite{zhou2015clstmneuralnetworktext,KAUR2023108699,app14146282} have been shown to greatly improve performance in text classification, even when the body of text is of a complex nature\cite{liu2024optimizingnewstextclassification,app14146282}.\ xLSTM is a new architecture which further improves on the accuracy of BiLSTMs\cite{beck2024xlstmextendedlongshortterm}. Therefore, it is a natural inclusion to ensemble onto the base ProtoNet.
+
+All models have hidden dimensions of 256 except for ProtoCNNBiLSTM, 
+which has double of that, being 512
+because BiLSTMs are, in simple terms, two layers of LSTM stacked.
+
+Euclidean distance was chosen for being simple to implement. It outperforms cosine similarity in a comparible study \cite{NIPS2017_cb8da676}, and based on pilot tests, is adequate to test these models.
+
+All architectures encode the embeddings in different ways, but they all feed their output to the mechanism that calculates the Prototypical Networks.
+CNNs are used to capture n-gram level patterns while the LSTM layers focuses on temporal patterns (think of the order of each word in a sentence as its temporal feature).
+
+There are two architectures which contain a new technique called xLSTM\cite{beck2024xlstmextendedlongshortterm}. By modifying the LSTM memory structure and introducing exponential gating, the model amplifies the importance of the differences between similar words during training.
+When paired with CNN, the xLSTM layer operates on its own separate branch and then fussed with the output of the CNN.
+
+\subsection{Experiment}
+Each class 
+will have its own binary classification model.
+
+For each architecture and class, a model is fitted for 35 epochs, with 15 support queries. For each k-shot configuration, which is either 2, 3, 5, 10 or 50-shot, the model configuration is fitted 5 times for each model and class. The same experiment is run 5 times to account for deviations in weight initiation.
+For example, for 5-shot, all the models would be fitted 5 times for all class datasets.
+
+This format is done for both the uncleaned datasets and their processed version.
+
+The experiment uses Adam optimiser (\(lr = 1e-3\)).
+
+For validation, accuracy, precision, recall and F1 scores are collected, along with p-score. 
+
+\section{Results}
+
+\begin{figure}[h]
+  \centering
+  \resizebox{\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned.pgf}}
+  \caption{Aggregate results per k-shot between architectures and preprocessing methods}
+  \label{fig:boxplots_per_k-shot}
+\end{figure}
+
+As seen in Figure~\ref{fig:boxplots_per_k-shot}, there is no significance (\(p>0.05\))
+in accuracy\footnote{The reason why this paper only reports accuracy is because, due to the way the results are validated, which is balanced perfectly between 0 and 1 class, the difference between metrics is negligible
+between accuracy and all other common validation metrics. Therefore, we assume accuracy in its simplest form.}
+between k-shots. It is however abundantly clear that the difference in accuracy between the Unclean and Preprocessed (Cleaned) datasets is significant (\(p = 0.000, p<0.001\)), being on average $\approx 5.13\%$ more accurate.
+The best performing architecture on the unclean set is the Base Prototypical Network. It also is the most consistent in its results, showing less deviation and outliers from the mean. The overall picture changes when we consider the cleaned set, which features the Protonet + CNN and the Protonet + CNN + xLSTM as the best models. However, the Base Prototypical Network continues to be the most stable architecture.
+ProtoNetCNN is the best performing model ($\approx95\%$ mean accuracy) for 2, 3 and 50-shot. However, for 5 and 10-shot, ProtoCNNxLSTM performs better overall ($\approx95\%$ mean accuracy). However, these results per k-shot
+are not statistically significant (\(p>0.05\)). These results do not account for variations between classes.
+
+\begin{figure}[h]
+  \centering
+  \resizebox{\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned_by_dataset.pgf}}
+  \caption{Aggregate results per class between architectures and preprocessing methods}
+    \label{fig:boxplot_per_class}
+\end{figure}
+
+Figure~\ref{fig:boxplot_per_class} shows the same results but per class. The dataset which the models struggled the most with was CCUS, where the best performing architecture was the Base Prototypical Network ($\approx91\%$), significantly higher than the other architectures (except for ProtoCNNxLSTM and ProtoNetCNN) (\( p<0.05\)).
+It was also on this class that the results showed greater variation. 
+For all classes, the cleaned set continues to outperform the unclean. Concerning the H2 class, ProtoCNNxLSTM, ProtoNetCNN and BaseProtonet are not significantly different from each other (\( p>0.1\)). For solar, only ProtoNetCNN and ProtoCNNxLSTM performed significantly better than the rest (\( p<0.05\)).
+Lastly, the solarPlus class is most accurately predicted by the ProtoCNNxLSTM and ProtoNetCNN architectures, which are significantly better than the rest (\( p<0.05\)). These results do not account for variations caused by different k-shots.
+
+\begin{table}
+  \centering
+  \resizebox{\columnwidth}{!}{
+    \begin{tabular}{lrll}
+        \hline
+        Dataset & k-shot & Model & Mean Accuracy \\
+        \hline
+        CCUS & 2 & \thead{BaseProtoNet \\ ProtoCNNxLSTM \\ ProtoNetCNN} & \thead{\textbf{93.67\%} \\ 93.26\% \\ 92.59\%} \\
+        H2 & 2 & \thead{BaseProtoNet \\ ProtoCNNxLSTM \\ ProtoNetCNN} & \thead{\textbf{94.54\%} \\ 94.0\% \\ 92.85\%} \\
+        solarPlus & 2 & \thead{ProtoCNNBiLSTM \\ ProtoCNNxLSTM \\ ProtoNetCNN \\ ProtoxLSTM} & \thead{\textbf{95.49\%} \\ 94.89\% \\ 94.62\% \\ 92.56\%} \\
+        solar & 5 & \thead{ProtoCNNBiLSTM \\ ProtoCNNxLSTM \\ ProtoNetCNN} & \thead{\textbf{94.65\%} \\ 93.75\% \\ 93.44\%} \\
+        \hline
+      \end{tabular}
+  }
+  \caption{Best performing model configuration for each dataset}
+  \label{table:bestModels}
+\end{table}
+
+For CCUS, H2 and solarPlus, the best k-shot configuration 
+is 2-shot. The best models are BaseProtoNet, ProtoCNNxLSTM and ProtoNetCNN. Additionally, solarPlus also features ProtoCNNBiLSTM.
+For solar, the best k-shot configuration is 5-shot, and the best performing models are ProtoCNNBiLSTM, ProtoCNNxLSTM and ProtoNetCNN.
+All of these `best models' mentioned are not significantly different between each other (\( p>0.05\)).
+
+\section{Discussion}
+
+If the objective is to evaluate
+the viability of Ensemble Architectures with a Prototypical Network base, then the results are inconclusive. In some datasets, a more complex model is detrimental
+to the accuracy of the task, as shown in Figure~\ref{fig:boxplot_per_class}, where the uncleaned dataset clearly shows worst performance, except for solar and solarPlus, where it is not statistically significant.
+So, contrary to the initial hypothesis that more complex models would perform better in more complex and longer texts, it looks as though the more complex models perform worse in such conditions.
+
+However, the cleaned versions of the datasets seem to reverse this trend somewhat. That the accuracy would increase as noisy and unimportant words are filtered out is to be expected (accounting for a $\approx 5.13\%$ increase in accuracy). 
+But for the complex models to not be significantly worse than the BaseProtoNet is a suprise and of relevance.
+In fact, as seen on Table~\ref{table:bestModels}, the BaseProtoNet performs significantly worse than all models in solar and solarPlus, albeit on 5-shot, where the best result was recorded. On the other two datasets, it is not significantly better. Figure~\ref{fig:boxplot_per_class} reinforces this observation.
+The implication of this 
+is in that it subverts the expectation that a more complex model is better when there is less noise in the corpus. It is also worthy of note that, as represented in Table~\ref{table:classDesc}, project descriptions labelled with CCUS
+have significantly more low frequency words in its vocabulary, as well as having a high academic word count. It is also the dataset where the BaseProtoNet performed best. 
+The dataset for H2, which has the highest amount of academic jargon, is where the BaseProtoNet also ranks amongst the most accurate. Although this study cannot prove that there is a correlation between the complexity and even length of the corpus, and the difference in accuracy between the BaseProtoNet and the more complex models, one could speculate that the BaseProtoNet is better at singling out and extrapolating from outlier words to create the prototypes, while the more complex models perform better when the relations between the words present at the corpus is more important than its jargon.
+This hypothesis 
+is further supported 
+by the literature which suggests 
+that LSTM's in text classification have the function of sequence capturing\cite{Xue2022-pw}, while CNN's improve on intersentence pattern recognition\cite{zhou2015clstmneuralnetworktext}. But both are good to capture the contextual relation between the training data\cite{KAUR2023108699}.
+However, the difference between accuracy variation by model might not be due to the difference in average complexity. So, for future work, it would be decissive to know if there is a correlation between complexity of the corpus and complexity of the model architecture. This exploration could potentially look into amplifying complex words, and thus, improve accuracy. By attempting to prove this hypothesis, one would also be validating the hypothesis that complex models perform better with complex text.  
+
+\begin{figure}[h]
+  \centering
+  \resizebox{\linewidth}{!}{\input{images/accuracy_vs_k_shot_trend.pgf}}
+  \caption{Correlation between accuracy per model and K-shot}
+    \label{fig:regressionLine_k-shot}
+\end{figure}
+
+For what concerns the relation between K-shot and accuracy, although one might be tempted to look at Figure~\ref{fig:regressionLine_k-shot} and draw conclusions about the effect of k-shot and accuracy,
+it is worth noting that the difference between the max and minimum accuracy for each model is never statistically significant (\( p>0.4\)). Looking at Figure~\ref{fig:boxplots_per_k-shot}, there doesnt seem to be a significant inter-model discrepancy between k-shots. 
+It is however interesting how the ProtoNetCNN and ProtoCNNxLSTM peak on 2-shot, while the others have a more accute variation. The line in ProtoNetCNN is even linear. This may be relevant because, in constrast wit the BaseProtoNet, which peaks in 5-shot, the introduction of the CNN component might impact the training in a way which makes it beneficial to have a lower k-shot.
+More work needs to be done to understand 
+why changing the k-shot is not statistically significant, and smaller k-shots seem to perform better, for one would suppose the more data disposable to the model during training, the better it would perform.
+One could speculate that, on the datasets where the lowest k-shot performed best, the corpus is more complex and the BaseProtoNet is the best model. Conversly, the k-shot that performed best for solar (a less complex dataset) is higher, reminiscing back the idea that in this dataset, the relation between the words and sentences are more important than the complexity of the lexicon, as discussed in the Methods section of this paper. 
+The results on table~\ref{table:bestModels} might also be outliers within their own configuration. Figure~\ref{fig:boxplots_per_k-shot} would lead us to conclude such. Variations in model initialisation in non-deterministic models such as neural networks might mean that the best performing models coming out of the experiments might have slight variations.
+This, too, is not proven in the scope of this research, and could open the avenue for further research on the variation that the non-deterministic factor has when observing the best performing models. 
+Another potential research venture would be to take the idea of an ensemble model with ProtoNets but apply processing to turn the text of the descriptions into image features, and then combine the ProtoNet and a CNN, which has been proven to work for text classification\cite{8270269}. Or even using Fourier Transform and the Transformer architectures for the same purpose\cite{Kachare_Goswami_Gupta_Chouhan_2025}.
+Since CNNs are traditionally used for Image Classificaton, these suggestions seem relevant because the introduction of the CNN architecture performed remarkably well in these experiments. To further the understanding of why CNN improves accuracy when combined with ProtoNets is essential not only to further our understanding of
+ few-shot image classification; building upon the original paper while exploring novel ways to train few-shot text classification models. 
+To conclude this section, it remains inconclusive whether or not Ensemble models improve or penalise the accuracy of a model. There is too much variation between datasets, models and k-shots. Therefore, future works should aim to understand when a corpus benifits from more complex models, and if so, what is it in that model that improves the accuracy. 
+
+\section{Conclusion}
+
+This paper presents experiments carried out on labelled classes of HORIZON projects, that explore the gap in Few-shot Text Classification using Prototypical Networks and Ensemble Models, such as CNN, BiLSTM and xLSTM.
+For the distinct classes, 4 models were fitted mulitple times, on all 4 distinct architectures, with a clean and uncleaned version.
+While the results from this experiment could not conclude that complex ensemble architectures combined with a Prototypical Network significantly outperform the base Prototypical Network, they show that more complex models do not necessarily perform better on complex data, as we might expect them to, and they open up many new questions and avenues for further research.
+Despite the BaseProtoNet still being the best for two datasets, it is not significantly better than the accuracy of the ProtoCNNxLSTM and ProtoNetCNN.
+This paper reinforces the efficacy of Prototypical Networks for few-shot classification while demonstrating the effects of more complex model architectures; their pitfalls and successes.
+More research needs to be done to widen the scope of these methods and experiments in other applications.
+
+\section{Limitations}
+
+The data provided by Solid Sustainability Research was labelled manually, with the help of ChatGPT's API, with clear guidelines on how they were labelled. \cite{pereira2025classifying}
+Therefore, there might be some mislabelled projects.
+
+\section{Ethical considerations}
+This research was born out of concerns surrounding the ethical implications of Large Language Models, and the curiosity to endeavour an alternative. The
+context that the dataset is placed in also aims to have positive societal impact, by means of exposing the extent to which universities and other public institutions
+have ties with the fossil fuel industry.
 \bibliography{custom}
-\end{verbatim}
-\end{quote}
-
-You can obtain the complete ACL Anthology as a Bib\TeX{} file from \url{https://aclweb.org/anthology/anthology.bib.gz}.
-To include both the Anthology and your own .bib file, use the following instead of the above.
-\begin{quote}
-\begin{verbatim}
-\bibliography{anthology,custom}
-\end{verbatim}
-\end{quote}
-
-Please see Section~\ref{sec:bibtex} for information on preparing Bib\TeX{} files.
-
-\subsection{Equations}
-
-An example equation is shown below:
-\begin{equation}
-  \label{eq:example}
-  A = \pi r^2
-\end{equation}
-
-Labels for equation numbers, sections, subsections, figures and tables
-are all defined with the \verb|\label{label}| command and cross references
-to them are made with the \verb|\ref{label}| command.
-
-This an example cross-reference to Equation~\ref{eq:example}.
-
-\subsection{Appendices}
-
-Use \verb|\appendix| before any appendix section to switch the section numbering over to letters. See Appendix~\ref{sec:appendix} for an example.
-
-\section{Bib\TeX{} Files}
-\label{sec:bibtex}
-
-Unicode cannot be used in Bib\TeX{} entries, and some ways of typing special characters can disrupt Bib\TeX's alphabetization. The recommended way of typing special characters is shown in Table~\ref{tab:accents}.
-
-Please ensure that Bib\TeX{} records contain DOIs or URLs when possible, and for all the ACL materials that you reference.
-Use the \verb|doi| field for DOIs and the \verb|url| field for URLs.
-If a Bib\TeX{} entry has a URL or DOI field, the paper title in the references section will appear as a hyperlink to the paper, using the hyperref \LaTeX{} package.
-
-\section*{Limitations}
-
-This document does not cover the content requirements for ACL or any
-other specific venue.  Check the author instructions for
-information on
-maximum page lengths, the required ``Limitations'' section,
-and so on.
-
-\section*{Acknowledgments}
-
-This document has been adapted
-by Steven Bethard, Ryan Cotterell and Rui Yan
-from the instructions for earlier ACL and NAACL proceedings, including those for
-ACL 2019 by Douwe Kiela and Ivan Vuli\'{c},
-NAACL 2019 by Stephanie Lukin and Alla Roskovskaya,
-ACL 2018 by Shay Cohen, Kevin Gimpel, and Wei Lu,
-NAACL 2018 by Margaret Mitchell and Stephanie Lukin,
-Bib\TeX{} suggestions for (NA)ACL 2017/2018 from Jason Eisner,
-ACL 2017 by Dan Gildea and Min-Yen Kan,
-NAACL 2017 by Margaret Mitchell,
-ACL 2012 by Maggie Li and Michael White,
-ACL 2010 by Jing-Shin Chang and Philipp Koehn,
-ACL 2008 by Johanna D. Moore, Simone Teufel, James Allan, and Sadaoki Furui,
-ACL 2005 by Hwee Tou Ng and Kemal Oflazer,
-ACL 2002 by Eugene Charniak and Dekang Lin,
-and earlier ACL and EACL formats written by several people, including
-John Chen, Henry S. Thompson and Donald Walker.
-Additional elements were taken from the formatting instructions of the \emph{International Joint Conference on Artificial Intelligence} and the \emph{Conference on Computer Vision and Pattern Recognition}.
-
-% Bibliography entries for the entire Anthology, followed by custom entries
-%\bibliography{custom,anthology-overleaf-1,anthology-overleaf-2}
-
-% Custom bibliography entries only
-\bibliography{custom}
-
-\appendix
-
-\section{Example Appendix}
-\label{sec:appendix}
-
-This is an appendix.
-
 \end{document}
