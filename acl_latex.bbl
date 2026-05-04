@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Beck et~al.(2024)Beck, Pöppel, Spanring, Auer, Prudnikova, Kopp,
@@ -17,8 +17,8 @@ Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
   bidirectional transformers for language understanding}.
 \newblock \emph{Preprint}, arXiv:1810.04805.
 
-\bibitem[{Ferlatti()}]{Ferlatti}
-Aldo Ferlatti.
+\bibitem[{Ferlatti(2024)}]{Ferlatti}
+Aldo Ferlatti. 2024.
 \newblock \href
   {https://medium.com/@ferlatti.aldo/estimation-of-text-complexity-c113d111e29f}
   {Estimation of text complexity}.
@@ -106,13 +106,6 @@ Frederik Pahde, Mihai Puscas, Tassilo Klein, and Moin Nabi. 2021.
 \newblock Multimodal prototypical networks for few-shot learning.
 \newblock In \emph{Proceedings of the IEEE/CVF Winter Conference on
   Applications of Computer Vision (WACV)}, pages 2644--2653.
-
-\bibitem[{Pereira(2025)}]{pereira2025classifying}
-Aaron Pereira. 2025.
-\newblock Classifying research project themes in the ec cordis database with
-  the help of llms.
-\newblock \url{http://solid-sustainability.org/topic-classification}.
-\newblock Solid Sustainability Research, published 16 March 2025.
 
 \bibitem[{Sachan et~al.(2019)Sachan, Zaheer, and Salakhutdinov}]{Sachan_2019}
 Devendra~Singh Sachan, Manzil Zaheer, and Ruslan Salakhutdinov. 2019.

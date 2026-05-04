@@ -1,109 +1,136 @@
-\documentclass[11pt]{article}
-
-% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
-% Change to "preprint" to generate a non-anonymous version with page numbers.
-\usepackage[review]{acl}
-
-% Standard package includes
-\usepackage{times}
-\usepackage{latexsym}
-
-% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
-\usepackage[T1]{fontenc}
-% For Vietnamese characters
-% \usepackage[T5]{fontenc}
-% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
-
-% This assumes your files are encoded as UTF8
-\usepackage[utf8]{inputenc}
-
-% This is not strictly necessary, and may be commented out,
-% but it will improve the layout of the manuscript,
-% and will typically save some space.
-\usepackage{microtype}
-
-% This is also not strictly necessary, and may be commented out.
-% However, it will improve the aesthetics of text in
-% the typewriter font.
-\usepackage{inconsolata}
-
-%Including images in your LaTeX document requires adding
-%additional package(s)
+%%
+%% This is file `sample-manuscript.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,manuscript')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-manuscript.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[manuscript, anonymous=true, review=true]{acmart}
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{pgf}
 \usepackage{amsmath}
 \providecommand{\mathdefault}[1]{#1}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
 
-% If the title and author information does not fit in the area allocated, uncomment the following
-%
-%\setlength\titlebox{<dim>}
-%
-% and set <dim> to something 5cm or larger.
 
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
 \title{Ensemble Models for K-Shot ProtoNets}
 
-% Author information can be set in various styles:
-% For several authors from the same institution:
-% \author{Author 1 \and ... \and Author n \\
-%         Address line \\ ... \\ Address line}
-% if the names do not fit well on one line use
-%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
-% For authors from different institutions:
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \And  ... \And
-%         Author n \\ Address line \\ ... \\ Address line}
-% To start a separate ``row'' of authors use \AND, as in
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \AND
-%         Author 2 \\ Address line \\ ... \\ Address line \And
-%         Author 3 \\ Address line \\ ... \\ Address line}
-
-\author{Guilherme Oliveira \\
-  Fontys University of Applied Sciences \\
-  \texttt{g.pintodeoliveira@student.fontys.nl}
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Guilherme Oliveira}
+\email{gui.p.oliveira@proton.me}
+\email{g.pintodeoliveira@student.fontys.nl}
+\orcid{0009-0002-7830-2845}
+\affiliation{%
+  \institution{Fontys University of Applied Sciences}
+  \city{Eindhoven}
+  \state{Noord Brabant}
+  \country{NL}
 }
 
-%\author{
-%  \textbf{First Author\textsuperscript{1}},
-%  \textbf{Second Author\textsuperscript{1,2}},
-%  \textbf{Third T. Author\textsuperscript{1}},
-%  \textbf{Fourth Author\textsuperscript{1}},
-%\\
-%  \textbf{Fifth Author\textsuperscript{1,2}},
-%  \textbf{Sixth Author\textsuperscript{1}},
-%  \textbf{Seventh Author\textsuperscript{1}},
-%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
-%\\
-%  \textbf{Ninth Author\textsuperscript{1}},
-%  \textbf{Tenth Author\textsuperscript{1}},
-%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
-%  \textbf{Twelfth Author\textsuperscript{1}},
-%\\
-%  \textbf{Thirteenth Author\textsuperscript{3}},
-%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
-%  \textbf{Fifteenth Author\textsuperscript{1}},
-%  \textbf{Sixteenth Author\textsuperscript{1}},
-%\\
-%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
-%  \textbf{Eighteenth Author\textsuperscript{3,4}},
-%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
-%  \textbf{Twentieth Author\textsuperscript{1}}
-%\\
-%\\
-%  \textsuperscript{1}Affiliation 1,
-%  \textsuperscript{2}Affiliation 2,
-%  \textsuperscript{3}Affiliation 3,
-%  \textsuperscript{4}Affiliation 4,
-%  \textsuperscript{5}Affiliation 5
-%\\
-%  \small{
-%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
-%  }
-%}
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010147.10010178.10010179.10003352</concept_id>
+       <concept_desc>Computing methodologies~Information extraction</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
 
-\begin{document}
-\maketitle
+\ccsdesc[300]{Computing methodologies~Information extraction}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
 \begin{abstract}
   Few-shot classification with Prototypical Networks is an established method for cases with limited labelled data, or for expanding classifiable classes within a solution. However, the effects and potential for ensemble models to improve accuracy on text classification is still untapped.
   To advance the understanding of few-shot text classification using Prototypical Networks and ensemble models, this paper proposes training different architectures comprised of famous text classification neural network techniques and Prototypical Networks. Furthermore, it trains the models on an unclean and cleaned version of the dataset.
@@ -111,6 +138,18 @@
   The cleaned version of the dataset has significant improvements across the board, but it especially boosts the ensemble models performance.
   This paper sets the groundwork for future research into the potential benefits of ensemble models for text few-shot binary classification. 
 \end{abstract}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{AI, Neural Networks, Few-shot Classification, Ensemble Models, Prototypical Networks}
+
+\received{04 May 2026}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
 
 \section{Introduction}
   Our intuition within the field of AI would tell us that 20 data points is not enough data to train an accurate model, but the field of Few-Shot or k-shot\footnote{k-shot classification where k is the number of labelled examples a given model is trained on} classification has challenged this presupposition by training accurate models using a small number of training data points, both for image\cite{NIPS2017_cb8da676, hou2022closerlookprototypeclassifier, JI202081} and text\cite{sun-etal-2019-hierarchical, electronics11152423, Sourati2023-bq, Liu2025-gf} and even for both\cite{Pahde_2021_WACV}.
@@ -172,7 +211,7 @@ solarPlus (n = 357).
 Additionally, it is observable in Table~\ref{table:labels} that the solar category never appears ungrouped. That is because solar is a subclass of solarPlus, according to the researchers that set the labels and carried out the labelling.
 Later on, all classes will be ungrouped, meaning that projects with multiple classes might appear in more than one dataset as a labelled data point.
 
-\begin{table*}
+\begin{table}
   \centering
     \begin{tabular}{lrrrrr}
       \hline
@@ -187,7 +226,8 @@ Later on, all classes will be ungrouped, meaning that projects with multiple cla
     \end{tabular}
     \caption{Analysis of corpus complexity per label}
     \label{table:classDesc}
-\end{table*}
+\end{table}
+
 The dataset for a given class is comprised of all of the data entries with that specific label, and all the other data entries of all the other classes plus the data entries with no label (NL = Not Labelled). 
 
 It is important to highlight how the average and median word count is pretty similar for all labels. This denotes that differences in accuracy that might occur on a dataset basis are not likely to be due to differences in text length.
@@ -198,6 +238,7 @@ which means that differences in accuracy may not be derived from complexity. For
 
 However, it is worth noting that the CCUS class features a significantly higher rate of low frequency words than the rest ($\textit{p-value} < 0.05, p \approx 0.0002$). Contrastly, solarPlus has a significantly lower rate of LFW ($\textit{p-value} < 0.05, p \approx 0.007$).
 For AW, H2 uses significantly more academic jargon than the rest ($\textit{p-value} < 0.05, p \approx 0.03$). On the other hand, NL has significantly less academic jargon in its corpus ($\textit{p-value} < 0.05, p \approx 0.006$)
+
 
 \subsubsection{Preprocessing}
 
@@ -257,8 +298,12 @@ For validation, accuracy, precision, recall and F1 scores are collected, along w
 
 \begin{figure}[h]
   \centering
-  \resizebox{\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned.pgf}}
+  \resizebox{.5\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned.pgf}}
   \caption{Aggregate results per k-shot between architectures and preprocessing methods}
+  \Description{
+    Five box plots showing the accuracy per k-shot, for all five architecture variations. The image also
+    indicates that the blue boxes represent the unclean data, and the orange boxes represent the cleaned data.
+  }
   \label{fig:boxplots_per_k-shot}
 \end{figure}
 
@@ -272,8 +317,12 @@ are not statistically significant (\(p>0.05\)). These results do not account for
 
 \begin{figure}[h]
   \centering
-  \resizebox{\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned_by_dataset.pgf}}
+  \resizebox{.6\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned_by_dataset.pgf}}
   \caption{Aggregate results per class between architectures and preprocessing methods}
+  \Description{
+    Five box plots showing the accuracy per class, for all five architecture variations. The image also
+    indicates that the blue boxes represent the unclean data, and the orange boxes represent the cleaned data.
+  }
     \label{fig:boxplot_per_class}
 \end{figure}
 
@@ -282,9 +331,9 @@ It was also on this class that the results showed greater variation.
 For all classes, the cleaned set continues to outperform the unclean. Concerning the H2 class, ProtoCNNxLSTM, ProtoNetCNN and BaseProtonet are not significantly different from each other (\( p>0.1\)). For solar, only ProtoNetCNN and ProtoCNNxLSTM performed significantly better than the rest (\( p<0.05\)).
 Lastly, the solarPlus class is most accurately predicted by the ProtoCNNxLSTM and ProtoNetCNN architectures, which are significantly better than the rest (\( p<0.05\)). These results do not account for variations caused by different k-shots.
 
+
 \begin{table}
   \centering
-  \resizebox{\columnwidth}{!}{
     \begin{tabular}{lrll}
         \hline
         Dataset & k-shot & Model & Mean Accuracy \\
@@ -295,7 +344,6 @@ Lastly, the solarPlus class is most accurately predicted by the ProtoCNNxLSTM an
         solar & 5 & \thead{ProtoCNNBiLSTM \\ ProtoCNNxLSTM \\ ProtoNetCNN} & \thead{\textbf{94.65\%} \\ 93.75\% \\ 93.44\%} \\
         \hline
       \end{tabular}
-  }
   \caption{Best performing model configuration for each dataset}
   \label{table:bestModels}
 \end{table}
@@ -327,8 +375,11 @@ However, the difference between accuracy variation by model might not be due to 
 
 \begin{figure}[h]
   \centering
-  \resizebox{\linewidth}{!}{\input{images/accuracy_vs_k_shot_trend.pgf}}
+  \resizebox{.6\linewidth}{!}{\input{images/accuracy_vs_k_shot_trend.pgf}}
   \caption{Correlation between accuracy per model and K-shot}
+  \Description{
+    A line graph showcasing the relation between Mean Accuracy and k-shot. There are 5 lines in total, each one representing a different model.
+  }
     \label{fig:regressionLine_k-shot}
 \end{figure}
 
@@ -366,5 +417,26 @@ context that the dataset is placed in also aims to have positive societal impact
 have ties with the fossil fuel industry.
 By investigating few-shot classification techniques, we can provide alternatives to climate destroying, unethical LLMs, and instead use smaller, more managable systems. The power of few-shot classification is in its accessibility; the entry
 level for a dataset to be able to train an accuracte model is much lower. Not only does that empower engineers to train models faster and cheaper (on account of needing less data), so does it decrease the need for copyrighted material, since you're less likely to reach for it in the cases where uncopyrighted data is enough.
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+ thank the researchers from Solid Sustainability Research for providing the busi-
+ness context and data, as well their incredible, thoughful and patient guidence.
+It has been a pleasure and an honour to contribute to a project for which its
+mission means so much. My appreciations also extend to my colleagues at the
+Master of Applied Sciences at Fontys ICT for providing me with good feedback
+on how to improve this paper, including general encouragment and interest.
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{custom}
+
 \end{document}
+%%
+%% End of file `sample-manuscript.tex'.

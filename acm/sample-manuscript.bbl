@@ -1,0 +1,359 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{23}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Beck et~al\mbox{.}(2024)]%
+        {beck2024xlstmextendedlongshortterm}
+\bibfield{author}{\bibinfo{person}{Maximilian Beck}, \bibinfo{person}{Korbinian
+  Pöppel}, \bibinfo{person}{Markus Spanring}, \bibinfo{person}{Andreas Auer},
+  \bibinfo{person}{Oleksandra Prudnikova}, \bibinfo{person}{Michael Kopp},
+  \bibinfo{person}{Günter Klambauer}, \bibinfo{person}{Johannes Brandstetter},
+  {and} \bibinfo{person}{Sepp Hochreiter}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{xLSTM: Extended Long Short-Term Memory}.
+\newblock
+\showeprint[arxiv]{2405.04517}~[cs.LG]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.04517}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Devlin et~al\mbox{.}(2019)]%
+        {devlin2019bertpretrainingdeepbidirectional}
+\bibfield{author}{\bibinfo{person}{Jacob Devlin}, \bibinfo{person}{Ming-Wei
+  Chang}, \bibinfo{person}{Kenton Lee}, {and} \bibinfo{person}{Kristina
+  Toutanova}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{BERT: Pre-training of Deep Bidirectional Transformers
+  for Language Understanding}.
+\newblock
+\showeprint[arxiv]{1810.04805}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1810.04805}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ferlatti(2024)]%
+        {Ferlatti}
+\bibfield{author}{\bibinfo{person}{Aldo Ferlatti}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Estimation of text complexity}}.
+\newblock
+\urldef\tempurl%
+\url{https://medium.com/ferlatti.aldo/estimation-of-text-complexity-c113d111e29f}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gallo et~al\mbox{.}(2017)]%
+        {8270269}
+\bibfield{author}{\bibinfo{person}{Ignazio Gallo}, \bibinfo{person}{Shah
+  Nawaz}, {and} \bibinfo{person}{Alessandro Calefati}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Semantic Text Encoding for Text Classification
+  Using Convolutional Neural Networks}. In \bibinfo{booktitle}{\emph{2017 14th
+  IAPR International Conference on Document Analysis and Recognition (ICDAR)}},
+  Vol.~\bibinfo{volume}{05}. \bibinfo{pages}{16--21}.
+\newblock
+\href{https://doi.org/10.1109/ICDAR.2017.323}{doi:\nolinkurl{10.1109/ICDAR.2017.323}}
+
+
+\bibitem[Guo et~al\mbox{.}(2022)]%
+        {electronics11152423}
+\bibfield{author}{\bibinfo{person}{Xinyu Guo}, \bibinfo{person}{Bingjie Tian},
+  {and} \bibinfo{person}{Xuedong Tian}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{HFGNN-Proto: Hesitant Fuzzy Graph Neural
+  Network-Based Prototypical Network for Few-Shot Text Classification}.
+\newblock \bibinfo{journal}{\emph{Electronics}} \bibinfo{volume}{11},
+  \bibinfo{number}{15} (\bibinfo{year}{2022}).
+\newblock
+\showISSN{2079-9292}
+\href{https://doi.org/10.3390/electronics11152423}{doi:\nolinkurl{10.3390/electronics11152423}}
+
+
+\bibitem[Hou and Sato(2022)]%
+        {hou2022closerlookprototypeclassifier}
+\bibfield{author}{\bibinfo{person}{Mingcheng Hou} {and} \bibinfo{person}{Issei
+  Sato}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{A Closer Look at Prototype Classifier for Few-shot
+  Image Classification}.
+\newblock
+\showeprint[arxiv]{2110.05076}~[cs.CV]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2110.05076}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Jamshidi et~al\mbox{.}(2024)]%
+        {JAMSHIDI2024102306}
+\bibfield{author}{\bibinfo{person}{Saman Jamshidi}, \bibinfo{person}{Mahin
+  Mohammadi}, \bibinfo{person}{Saeed Bagheri}, \bibinfo{person}{Hamid~Esmaeili
+  Najafabadi}, \bibinfo{person}{Alireza Rezvanian}, \bibinfo{person}{Mehdi
+  Gheisari}, \bibinfo{person}{Mustafa Ghaderzadeh},
+  \bibinfo{person}{Amir~Shahab Shahabi}, {and} \bibinfo{person}{Zongda Wu}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Effective text classification using BERT, MTM LSTM,
+  and DT}.
+\newblock \bibinfo{journal}{\emph{Data and Knowledge Engineering}}
+  \bibinfo{volume}{151} (\bibinfo{year}{2024}), \bibinfo{pages}{102306}.
+\newblock
+\showISSN{0169-023X}
+\href{https://doi.org/10.1016/j.datak.2024.102306}{doi:\nolinkurl{10.1016/j.datak.2024.102306}}
+
+
+\bibitem[Ji et~al\mbox{.}(2020)]%
+        {JI202081}
+\bibfield{author}{\bibinfo{person}{Zhong Ji}, \bibinfo{person}{Xingliang Chai},
+  \bibinfo{person}{Yunlong Yu}, \bibinfo{person}{Yanwei Pang}, {and}
+  \bibinfo{person}{Zhongfei Zhang}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Improved prototypical networks for few-Shot
+  learning}.
+\newblock \bibinfo{journal}{\emph{Pattern Recognition Letters}}
+  \bibinfo{volume}{140} (\bibinfo{year}{2020}), \bibinfo{pages}{81--87}.
+\newblock
+\showISSN{0167-8655}
+\href{https://doi.org/10.1016/j.patrec.2020.07.015}{doi:\nolinkurl{10.1016/j.patrec.2020.07.015}}
+
+
+\bibitem[Kachare et~al\mbox{.}(2025)]%
+        {Kachare_Goswami_Gupta_Chouhan_2025}
+\bibfield{author}{\bibinfo{person}{Atul Kachare},
+  \bibinfo{person}{Chandrashekhar Goswami}, \bibinfo{person}{Ashutosh Gupta},
+  {and} \bibinfo{person}{D.S. Chouhan}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{FNet-GPT: Fourier-based lightweight transformer for
+  emotion-aware text generation using GPT}.
+\newblock \bibinfo{journal}{\emph{Future Technology}} \bibinfo{volume}{4},
+  \bibinfo{number}{4} (\bibinfo{date}{Aug.} \bibinfo{year}{2025}),
+  \bibinfo{pages}{138–145}.
+\newblock
+\urldef\tempurl%
+\url{https://fupubco.com/futech/article/view/459}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kaur and Kaur(2023)]%
+        {KAUR2023108699}
+\bibfield{author}{\bibinfo{person}{Kamaljit Kaur} {and}
+  \bibinfo{person}{Parminder Kaur}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Improving BERT model for requirements
+  classification by bidirectional LSTM-CNN deep model}.
+\newblock \bibinfo{journal}{\emph{Computers and Electrical Engineering}}
+  \bibinfo{volume}{108} (\bibinfo{year}{2023}), \bibinfo{pages}{108699}.
+\newblock
+\showISSN{0045-7906}
+\href{https://doi.org/10.1016/j.compeleceng.2023.108699}{doi:\nolinkurl{10.1016/j.compeleceng.2023.108699}}
+
+
+\bibitem[Kim(2014)]%
+        {kim2014convolutionalneuralnetworkssentence}
+\bibfield{author}{\bibinfo{person}{Yoon Kim}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{title}{Convolutional Neural Networks for Sentence
+  Classification}.
+\newblock
+\showeprint[arxiv]{1408.5882}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1408.5882}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kuang and Xu(2010)]%
+        {5566113}
+\bibfield{author}{\bibinfo{person}{Qiaoyan Kuang} {and}
+  \bibinfo{person}{Xiaoming Xu}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Improvement and Application of TF•IDF Method
+  Based on Text Classification}. In \bibinfo{booktitle}{\emph{2010
+  International Conference on Internet Technology and Applications}}.
+  \bibinfo{pages}{1--4}.
+\newblock
+\href{https://doi.org/10.1109/ITAPP.2010.5566113}{doi:\nolinkurl{10.1109/ITAPP.2010.5566113}}
+
+
+\bibitem[Liu et~al\mbox{.}(2024)]%
+        {liu2024optimizingnewstextclassification}
+\bibfield{author}{\bibinfo{person}{Bingyao Liu}, \bibinfo{person}{Jiajing
+  Chen}, \bibinfo{person}{Rui Wang}, \bibinfo{person}{Junming Huang},
+  \bibinfo{person}{Yuanshuai Luo}, {and} \bibinfo{person}{Jianjun Wei}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Optimizing News Text Classification with Bi-LSTM and
+  Attention Mechanism for Efficient Data Processing}.
+\newblock
+\showeprint[arxiv]{2409.15576}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.15576}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Liu et~al\mbox{.}(2025)]%
+        {Liu2025-gf}
+\bibfield{author}{\bibinfo{person}{Xinyue Liu}, \bibinfo{person}{Yunlong Gao},
+  \bibinfo{person}{Linlin Zong}, \bibinfo{person}{Wenxin Liang}, {and}
+  \bibinfo{person}{Bo Xu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Guiding Prototype Networks with label semantics for
+  few-shot text classification}.
+\newblock \bibinfo{journal}{\emph{Pattern Recognit.}} \bibinfo{volume}{164},
+  \bibinfo{number}{111497} (\bibinfo{date}{Aug.} \bibinfo{year}{2025}),
+  \bibinfo{pages}{111497}.
+\newblock
+
+
+\bibitem[Pahde et~al\mbox{.}(2021)]%
+        {Pahde_2021_WACV}
+\bibfield{author}{\bibinfo{person}{Frederik Pahde}, \bibinfo{person}{Mihai
+  Puscas}, \bibinfo{person}{Tassilo Klein}, {and} \bibinfo{person}{Moin Nabi}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Multimodal Prototypical Networks for Few-Shot
+  Learning}. In \bibinfo{booktitle}{\emph{Proceedings of the IEEE/CVF Winter
+  Conference on Applications of Computer Vision (WACV)}}.
+  \bibinfo{pages}{2644--2653}.
+\newblock
+
+
+\bibitem[Sachan et~al\mbox{.}(2019)]%
+        {Sachan_2019}
+\bibfield{author}{\bibinfo{person}{Devendra~Singh Sachan},
+  \bibinfo{person}{Manzil Zaheer}, {and} \bibinfo{person}{Ruslan
+  Salakhutdinov}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Revisiting LSTM Networks for Semi-Supervised Text
+  Classification via Mixed Objective Function}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the AAAI Conference on
+  Artificial Intelligence}} \bibinfo{volume}{33}, \bibinfo{number}{01}
+  (\bibinfo{date}{July} \bibinfo{year}{2019}).
+\newblock
+\showISSN{2159-5399}
+\href{https://doi.org/10.1609/aaai.v33i01.33016940}{doi:\nolinkurl{10.1609/aaai.v33i01.33016940}}
+
+
+\bibitem[Snell et~al\mbox{.}(2017)]%
+        {NIPS2017_cb8da676}
+\bibfield{author}{\bibinfo{person}{Jake Snell}, \bibinfo{person}{Kevin
+  Swersky}, {and} \bibinfo{person}{Richard Zemel}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Prototypical Networks for Few-shot Learning}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.neurips.cc/paper_files/paper/2017/file/cb8da6767461f2812ae4290eac7cbc42-Paper.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Sourati et~al\mbox{.}(2023)]%
+        {Sourati2023-bq}
+\bibfield{author}{\bibinfo{person}{Zhivar Sourati}, \bibinfo{person}{Darshan
+  Deshpande}, \bibinfo{person}{Filip Ilievski}, \bibinfo{person}{Kiril
+  Gashteovski}, {and} \bibinfo{person}{Sascha Saralajew}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Robust text classification: Analyzing
+  {Prototype-Based} Networks}.
+\newblock
+\showeprint{2311.06647}~[cs.CL]
+
+
+\bibitem[Sun et~al\mbox{.}(2019)]%
+        {sun-etal-2019-hierarchical}
+\bibfield{author}{\bibinfo{person}{Shengli Sun}, \bibinfo{person}{Qingfeng
+  Sun}, \bibinfo{person}{Kevin Zhou}, {and} \bibinfo{person}{Tengchao Lv}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Hierarchical Attention Prototypical Networks for
+  Few-Shot Text Classification}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2019 Conference on Empirical Methods in Natural Language Processing and
+  the 9th International Joint Conference on Natural Language Processing
+  (EMNLP-IJCNLP)}}, \bibfield{editor}{\bibinfo{person}{Kentaro Inui},
+  \bibinfo{person}{Jing Jiang}, \bibinfo{person}{Vincent Ng}, {and}
+  \bibinfo{person}{Xiaojun Wan}} (Eds.). \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{address}{Hong Kong, China},
+  \bibinfo{pages}{476--485}.
+\newblock
+\href{https://doi.org/10.18653/v1/D19-1045}{doi:\nolinkurl{10.18653/v1/D19-1045}}
+
+
+\bibitem[Xiong et~al\mbox{.}(2024)]%
+        {app14146282}
+\bibfield{author}{\bibinfo{person}{Yunpeng Xiong}, \bibinfo{person}{Guolian
+  Chen}, {and} \bibinfo{person}{Junkuo Cao}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Research on Public Service Request Text
+  Classification Based on BERT-BiLSTM-CNN Feature Fusion}.
+\newblock \bibinfo{journal}{\emph{Applied Sciences}} \bibinfo{volume}{14},
+  \bibinfo{number}{14} (\bibinfo{year}{2024}).
+\newblock
+\showISSN{2076-3417}
+\href{https://doi.org/10.3390/app14146282}{doi:\nolinkurl{10.3390/app14146282}}
+
+
+\bibitem[Xue et~al\mbox{.}(2022)]%
+        {Xue2022-pw}
+\bibfield{author}{\bibinfo{person}{Bingxin Xue}, \bibinfo{person}{Cui Zhu},
+  \bibinfo{person}{Xuan Wang}, {and} \bibinfo{person}{Wenjun Zhu}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{The study on the text classification based on graph
+  convolutional network and {BiLSTM}}. In \bibinfo{booktitle}{\emph{Proceedings
+  of the 8th International Conference on Computing and Artificial
+  Intelligence}} (Tianjin China). \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}.
+\newblock
+
+
+\bibitem[Yun-tao et~al\mbox{.}(2005)]%
+        {Yun-tao2005-vn}
+\bibfield{author}{\bibinfo{person}{Zhang Yun-tao}, \bibinfo{person}{Gong Ling},
+  {and} \bibinfo{person}{Wang Yong-cheng}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{An improved {TF-IDF} approach for text
+  classification}.
+\newblock \bibinfo{journal}{\emph{J. Zheijang Univ.-Sci. A}}
+  \bibinfo{volume}{6}, \bibinfo{number}{1} (\bibinfo{date}{Aug.}
+  \bibinfo{year}{2005}), \bibinfo{pages}{49--55}.
+\newblock
+
+
+\bibitem[Zhou et~al\mbox{.}(2015)]%
+        {zhou2015clstmneuralnetworktext}
+\bibfield{author}{\bibinfo{person}{Chunting Zhou}, \bibinfo{person}{Chonglin
+  Sun}, \bibinfo{person}{Zhiyuan Liu}, {and} \bibinfo{person}{Francis C.~M.
+  Lau}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{title}{A C-LSTM Neural Network for Text Classification}.
+\newblock
+\showeprint[arxiv]{1511.08630}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1511.08630}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}
