@@ -1,115 +1,115 @@
-\documentclass[11pt]{article}
-% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
-% Change to "preprint" to generate a non-anonymous version with page numbers.
-\usepackage[main]{neurips_2026}
+\documentclass{article}
 
-% Standard package includes
-\usepackage{times}
-\usepackage{latexsym}
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2026
+\usepackage[nonatbib]{neurips_2026}
 
-% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
-\usepackage[T1]{fontenc}
-% For Vietnamese characters
-% \usepackage[T5]{fontenc}
-% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+% The authors should use one of these tracks.
+% Before accepting by the NeurIPS conference, select one of the options below.
+% 0. "default" for submission
+% the "default" option is equal to the "main" option, which is used for the Main Track with double-blind reviewing.
+% 1. "main" option is used for the Main Track
+%  \usepackage[main]{neurips_2026}
+% 2. "position" option is used for the Position Paper Track
+%  \usepackage[position]{neurips_2026}
+% 3. "eandd" option is used for the Evaluations & Datasets Track
+ % \usepackage[eandd]{neurips_2026}
+% 4. "creativeai" option is used for the Creative AI Track
+%  \usepackage[creativeai]{neurips_2026}
+% 5. "sglblindworkshop" option is used for the Workshop with single-blind reviewing
+ % \usepackage[sglblindworkshop]{neurips_2026}
+% 6. "dblblindworkshop" option is used for the Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop]{neurips_2026}
 
-% This assumes your files are encoded as UTF8
-\usepackage[utf8]{inputenc}
+% After being accepted, the authors should add "final" behind the track to compile a camera-ready version.
+% 1. Main Track
+ % \usepackage[main, final]{neurips_2026}
+% 2. Position Paper Track
+%  \usepackage[position, final]{neurips_2026}
+% 3. Evaluations & Datasets Track
+ % \usepackage[eandd, final]{neurips_2026}
+% 4. Creative AI Track
+%  \usepackage[creativeai, final]{neurips_2026}
+% 5. Workshop with single-blind reviewing
+%  \usepackage[sglblindworkshop, final]{neurips_2026}
+% 6. Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop, final]{neurips_2026}
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote.
+% For workshops (5., 6.), the authors should add the name of the workshop, "\workshoptitle" command is used to set the workshop title.
+% \workshoptitle{WORKSHOP TITLE}
 
-% This is not strictly necessary, and may be commented out,
-% but it will improve the layout of the manuscript,
-% and will typically save some space.
-\usepackage{microtype}
+% "preprint" option is used for arXiv or other preprint submissions
+ % \usepackage[preprint]{neurips_2026}
 
-% This is also not strictly necessary, and may be commented out.
-% However, it will improve the aesthetics of text in
-% the typewriter font.
-\usepackage{inconsolata}
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2026}
 
-%Including images in your LaTeX document requires adding
-%additional package(s)
-\usepackage{graphicx}
-\usepackage{makecell}
-\usepackage{pgf}
-\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
 \usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-\usepackage{xcolor}   
+\usepackage{xcolor}         % colors
+\usepackage{pgf}
+\usepackage{graphicx}
+\usepackage{makecell}
+
 \providecommand{\mathdefault}[1]{#1}
 
-% If the title and author information does not fit in the area allocated, uncomment the following
-%
-%\setlength\titlebox{<dim>}
-%
-% and set <dim> to something 5cm or larger.
 
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote. 
 \title{Ensemble Models for K-Shot ProtoNets}
 
-% Author information can be set in various styles:
-% For several authors from the same institution:
-% \author{Author 1 \and ... \and Author n \\
-%         Address line \\ ... \\ Address line}
-% if the names do not fit well on one line use
-%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
-% For authors from different institutions:
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \And  ... \And
-%         Author n \\ Address line \\ ... \\ Address line}
-% To start a separate ``row'' of authors use \AND, as in
-% \author{Author 1 \\ Address line \\  ... \\ Address line
-%         \AND
-%         Author 2 \\ Address line \\ ... \\ Address line \And
-%         Author 3 \\ Address line \\ ... \\ Address line}
 
-\author{First Author \\
-  Fontys University of Applied Sciences \\
-  \texttt{g.pintodeoliveira@student.fontys.nl}
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+
+\author{%
+  Guilherme Pinto de Oliveira\thanks{gui.p.oliv@proton.me}\\
+  ICT Open Learning\\
+  Fontys University of Applied Sciences\\
+  Eindhoven, Netherlands \\
+  \texttt{g.pintodeoliveira@student.fontys.nl} \\
+  % examples of more authors
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \AND
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
 }
 
-%\author{
-%  \textbf{First Author\textsuperscript{1}},
-%  \textbf{Second Author\textsuperscript{1,2}},
-%  \textbf{Third T. Author\textsuperscript{1}},
-%  \textbf{Fourth Author\textsuperscript{1}},
-%\\
-%  \textbf{Fifth Author\textsuperscript{1,2}},
-%  \textbf{Sixth Author\textsuperscript{1}},
-%  \textbf{Seventh Author\textsuperscript{1}},
-%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
-%\\
-%  \textbf{Ninth Author\textsuperscript{1}},
-%  \textbf{Tenth Author\textsuperscript{1}},
-%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
-%  \textbf{Twelfth Author\textsuperscript{1}},
-%\\
-%  \textbf{Thirteenth Author\textsuperscript{3}},
-%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
-%  \textbf{Fifteenth Author\textsuperscript{1}},
-%  \textbf{Sixteenth Author\textsuperscript{1}},
-%\\
-%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
-%  \textbf{Eighteenth Author\textsuperscript{3,4}},
-%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
-%  \textbf{Twentieth Author\textsuperscript{1}}
-%\\
-%\\
-%  \textsuperscript{1}Affiliation 1,
-%  \textsuperscript{2}Affiliation 2,
-%  \textsuperscript{3}Affiliation 3,
-%  \textsuperscript{4}Affiliation 4,
-%  \textsuperscript{5}Affiliation 5
-%\\
-%  \small{
-%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
-%  }
-%}
 
 \begin{document}
+
+
 \maketitle
+
+
 \begin{abstract}
   Few-shot classification with Prototypical Networks is an established method for cases with limited labelled data, or for expanding classifiable classes within a solution. However, the effects and potential for ensemble models to improve accuracy on text classification is still untapped.
   To advance the understanding of few-shot text classification using Prototypical Networks and ensemble models, this paper proposes training different architectures comprised of famous text classification neural network techniques and Prototypical Networks. Furthermore, it trains the models on an unclean and cleaned version of the dataset.
@@ -178,11 +178,11 @@ solarPlus (n = 357).
 Additionally, it is observable in Table~\ref{table:labels} that the solar category never appears ungrouped. That is because solar is a subclass of solarPlus, according to the researchers that set the labels and carried out the labelling.
 Later on, all classes will be ungrouped, meaning that projects with multiple classes might appear in more than one dataset as a labelled data point.
 
-\begin{table*}
+\begin{table}
   \centering
     \begin{tabular}{lrrrrr}
       \hline
-      class & \thead{AW \\ rate} & \thead{LFW \\ rate} & count & \thead{Avg word \\ count} & \thead{Median word \\ count} \\
+      class & AW rate & LFW rate & count & Avg word count & Median word count \\
       \hline
       CCUS & 21.3 & 5.3 & 616 & 267 & 276 \\
       H2 & 21.8 & 4.6 & 1088 & 271 & 276 \\
@@ -193,7 +193,9 @@ Later on, all classes will be ungrouped, meaning that projects with multiple cla
     \end{tabular}
     \caption{Analysis of corpus complexity per label}
     \label{table:classDesc}
-\end{table*}
+\end{table}
+
+
 The dataset for a given class is comprised of all of the data entries with that specific label, and all the other data entries of all the other classes plus the data entries with no label (NL = Not Labelled). 
 
 It is important to highlight how the average and median word count is pretty similar for all labels. This denotes that differences in accuracy that might occur on a dataset basis are not likely to be due to differences in text length.
@@ -230,6 +232,7 @@ Random samples of the dataset are picked. \textbf{\textit{k}} number of examples
 Using those samples, a number of examples are derived
 from \textbf{\textit{k}} plus the query number (n=15), with which is selected from the general dataset that number of examples for each distinct class at random.
 
+
 \subsection{Architectures}
 This paper attempts to experiment with ensemble models, in order to capture the complexity of the dataset. The hypothesis tested is that the complexity of the dataset should be dealt with a proportionately complex model architecture.
 LSTMs\cite{JAMSHIDI2024102306,liu2024optimizingnewstextclassification,Sachan_2019}, CNNs\cite{kim2014convolutionalneuralnetworkssentence} and their ensemble\cite{zhou2015clstmneuralnetworktext,KAUR2023108699,app14146282} have been shown to greatly improve performance in text classification, even when the body of text is of a complex nature\cite{liu2024optimizingnewstextclassification,app14146282}.\ xLSTM is a new architecture which further improves on the accuracy of BiLSTMs\cite{beck2024xlstmextendedlongshortterm}. Therefore, it is a natural inclusion to ensemble onto the base ProtoNet.
@@ -261,9 +264,9 @@ For validation, accuracy, precision, recall and F1 scores are collected, along w
 
 \section{Results}
 
-\begin{figure}[ht]
+\begin{figure}
   \centering
-  \resizebox{0.6\linewidth}{!}{%
+  \resizebox{!}{0.5\textheight}{%
   \input{images/boxplots_unclean_vs_cleaned.pgf}%
   }
   \caption{Aggregate results per k-shot between architectures and preprocessing methods}
@@ -278,9 +281,9 @@ The best performing architecture on the unclean set is the Base Prototypical Net
 ProtoNetCNN is the best performing model ($\approx95\%$ mean accuracy) for 2, 3 and 50-shot. However, for 5 and 10-shot, ProtoCNNxLSTM performs better overall ($\approx95\%$ mean accuracy). However, these results per k-shot
 are not statistically significant (\(p>0.05\)). These results do not account for variations between classes.
 
-\begin{figure}[ht]
+\begin{figure}
   \centering
-  \resizebox{\linewidth}{!}{\input{images/boxplots_unclean_vs_cleaned_by_dataset.pgf}}
+  \resizebox{!}{0.5\textheight}{\input{images/boxplots_unclean_vs_cleaned_by_dataset.pgf}}
   \caption{Aggregate results per class between architectures and preprocessing methods}
     \label{fig:boxplot_per_class}
 \end{figure}
@@ -292,7 +295,7 @@ Lastly, the solarPlus class is most accurately predicted by the ProtoCNNxLSTM an
 
 \begin{table}
   \centering
-  \resizebox{\columnwidth}{!}{
+  \resizebox{0.7\columnwidth}{!}{
     \begin{tabular}{lrll}
         \hline
         Dataset & k-shot & Model & Mean Accuracy \\
@@ -332,8 +335,10 @@ is further supported
 by the literature which suggests 
 that LSTM's in text classification have the function of sequence capturing\cite{Xue2022-pw}, while CNN's improve on intersentence pattern recognition\cite{zhou2015clstmneuralnetworktext}. But both are good to capture the contextual relation between the training data\cite{KAUR2023108699}.
 However, the difference between accuracy variation by model might not be due to the difference in average complexity. So, for future work, it would be decissive to know if there is a correlation between complexity of the corpus and complexity of the model architecture. This exploration could potentially look into amplifying complex words, and thus, improve accuracy. By attempting to prove this hypothesis, one would also be validating the hypothesis that complex models perform better with complex text.  
+achieve this.
 
-\begin{figure}[h]
+
+\begin{figure}
   \centering
   \resizebox{\linewidth}{!}{\input{images/accuracy_vs_k_shot_trend.pgf}}
   \caption{Correlation between accuracy per model and K-shot}
@@ -365,11 +370,16 @@ More research needs to be done to widen the scope of these methods and experimen
 \section{Limitations}
 
 The data provided by Solid Sustainability Research was labelled manually, with the help of ChatGPT's API, with clear guidelines on how they were labelled. \cite{pereira2025classifying}
-Therefore, there might be some mislabelled projects.
+Therefore, there might be some mislabelled projects. Furthermore, the results observed on the dataset used may not reflect on other datasets of similar complexity.
 
 \section{Ethical considerations}
 This research was born out of concerns surrounding the ethical implications of Large Language Models, and the curiosity to endeavour an alternative. The
 context that the dataset is placed in also aims to have positive societal impact, by means of exposing the extent to which universities and other public institutions
 have ties with the fossil fuel industry.
+
+\newpage
+\input{checklist.tex}
+
+\bibliographystyle{unsrt}
 \bibliography{custom}
 \end{document}

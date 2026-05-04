@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: neurips_2026.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Database file #1: custom.bib
+You've used 24 entries,
+            1791 wiz_defined-function locations,
+            593 strings with 8875 characters,
+and the built_in function-call counts, 5341 in all, are:
+= -- 401
+> -- 329
+< -- 5
++ -- 118
+- -- 94
+* -- 355
+:= -- 852
+add.period$ -- 66
+call.type$ -- 24
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 220
+empty$ -- 530
+format.name$ -- 94
+if$ -- 1200
+int.to.chr$ -- 0
+int.to.str$ -- 24
+missing$ -- 14
+newline$ -- 115
+num.names$ -- 26
+pop$ -- 104
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 131
+stack$ -- 0
+substring$ -- 215
+swap$ -- 60
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 41
+width$ -- 26
+write$ -- 243

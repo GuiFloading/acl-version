@@ -1,0 +1,146 @@
+\begin{thebibliography}{10}
+
+\bibitem{NIPS2017_cb8da676}
+Jake Snell, Kevin Swersky, and Richard Zemel.
+\newblock Prototypical networks for few-shot learning, 2017.
+
+\bibitem{hou2022closerlookprototypeclassifier}
+Mingcheng Hou and Issei Sato.
+\newblock A closer look at prototype classifier for few-shot image
+  classification, 2022.
+
+\bibitem{JI202081}
+Zhong Ji, Xingliang Chai, Yunlong Yu, Yanwei Pang, and Zhongfei Zhang.
+\newblock Improved prototypical networks for few-shot learning.
+\newblock {\em Pattern Recognition Letters}, 140:81--87, 2020.
+
+\bibitem{sun-etal-2019-hierarchical}
+Shengli Sun, Qingfeng Sun, Kevin Zhou, and Tengchao Lv.
+\newblock Hierarchical attention prototypical networks for few-shot text
+  classification.
+\newblock In Kentaro Inui, Jing Jiang, Vincent Ng, and Xiaojun Wan, editors,
+  {\em Proceedings of the 2019 Conference on Empirical Methods in Natural
+  Language Processing and the 9th International Joint Conference on Natural
+  Language Processing (EMNLP-IJCNLP)}, pages 476--485, Hong Kong, China,
+  November 2019. Association for Computational Linguistics.
+
+\bibitem{electronics11152423}
+Xinyu Guo, Bingjie Tian, and Xuedong Tian.
+\newblock Hfgnn-proto: Hesitant fuzzy graph neural network-based prototypical
+  network for few-shot text classification.
+\newblock {\em Electronics}, 11(15), 2022.
+
+\bibitem{Sourati2023-bq}
+Zhivar Sourati, Darshan Deshpande, Filip Ilievski, Kiril Gashteovski, and
+  Sascha Saralajew.
+\newblock Robust text classification: Analyzing {Prototype-Based} networks,
+  2023.
+
+\bibitem{Liu2025-gf}
+Xinyue Liu, Yunlong Gao, Linlin Zong, Wenxin Liang, and Bo~Xu.
+\newblock Guiding prototype networks with label semantics for few-shot text
+  classification.
+\newblock {\em Pattern Recognit.}, 164(111497):111497, August 2025.
+
+\bibitem{Pahde_2021_WACV}
+Frederik Pahde, Mihai Puscas, Tassilo Klein, and Moin Nabi.
+\newblock Multimodal prototypical networks for few-shot learning.
+\newblock In {\em Proceedings of the IEEE/CVF Winter Conference on Applications
+  of Computer Vision (WACV)}, pages 2644--2653, January 2021.
+
+\bibitem{Yun-tao2005-vn}
+Zhang Yun-tao, Gong Ling, and Wang Yong-cheng.
+\newblock An improved {TF-IDF} approach for text classification.
+\newblock {\em J. Zheijang Univ.-Sci. A}, 6(1):49--55, August 2005.
+
+\bibitem{5566113}
+Qiaoyan Kuang and Xiaoming Xu.
+\newblock Improvement and application of tf•idf method based on text
+  classification.
+\newblock In {\em 2010 International Conference on Internet Technology and
+  Applications}, pages 1--4, 2010.
+
+\bibitem{beck2024xlstmextendedlongshortterm}
+Maximilian Beck, Korbinian Pöppel, Markus Spanring, Andreas Auer, Oleksandra
+  Prudnikova, Michael Kopp, Günter Klambauer, Johannes Brandstetter, and Sepp
+  Hochreiter.
+\newblock xlstm: Extended long short-term memory, 2024.
+
+\bibitem{Sachan_2019}
+Devendra~Singh Sachan, Manzil Zaheer, and Ruslan Salakhutdinov.
+\newblock Revisiting lstm networks for semi-supervised text classification via
+  mixed objective function.
+\newblock {\em Proceedings of the AAAI Conference on Artificial Intelligence},
+  33(01), July 2019.
+
+\bibitem{app14146282}
+Yunpeng Xiong, Guolian Chen, and Junkuo Cao.
+\newblock Research on public service request text classification based on
+  bert-bilstm-cnn feature fusion.
+\newblock {\em Applied Sciences}, 14(14), 2024.
+
+\bibitem{liu2024optimizingnewstextclassification}
+Bingyao Liu, Jiajing Chen, Rui Wang, Junming Huang, Yuanshuai Luo, and Jianjun
+  Wei.
+\newblock Optimizing news text classification with bi-lstm and attention
+  mechanism for efficient data processing, 2024.
+
+\bibitem{KAUR2023108699}
+Kamaljit Kaur and Parminder Kaur.
+\newblock Improving bert model for requirements classification by bidirectional
+  lstm-cnn deep model.
+\newblock {\em Computers and Electrical Engineering}, 108:108699, 2023.
+
+\bibitem{JAMSHIDI2024102306}
+Saman Jamshidi, Mahin Mohammadi, Saeed Bagheri, Hamid~Esmaeili Najafabadi,
+  Alireza Rezvanian, Mehdi Gheisari, Mustafa Ghaderzadeh, Amir~Shahab Shahabi,
+  and Zongda Wu.
+\newblock Effective text classification using bert, mtm lstm, and dt.
+\newblock {\em Data and Knowledge Engineering}, 151:102306, 2024.
+
+\bibitem{zhou2015clstmneuralnetworktext}
+Chunting Zhou, Chonglin Sun, Zhiyuan Liu, and Francis C.~M. Lau.
+\newblock A c-lstm neural network for text classification, 2015.
+
+\bibitem{Ferlatti}
+Aldo Ferlatti.
+\newblock Estimation of text complexity.
+
+\bibitem{devlin2019bertpretrainingdeepbidirectional}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding, 2019.
+
+\bibitem{kim2014convolutionalneuralnetworkssentence}
+Yoon Kim.
+\newblock Convolutional neural networks for sentence classification, 2014.
+
+\bibitem{Xue2022-pw}
+Bingxin Xue, Cui Zhu, Xuan Wang, and Wenjun Zhu.
+\newblock The study on the text classification based on graph convolutional
+  network and {BiLSTM}.
+\newblock In {\em Proceedings of the 8th International Conference on Computing
+  and Artificial Intelligence}, New York, NY, USA, March 2022. ACM.
+
+\bibitem{8270269}
+Ignazio Gallo, Shah Nawaz, and Alessandro Calefati.
+\newblock Semantic text encoding for text classification using convolutional
+  neural networks.
+\newblock In {\em 2017 14th IAPR International Conference on Document Analysis
+  and Recognition (ICDAR)}, volume~05, pages 16--21, 2017.
+
+\bibitem{Kachare_Goswami_Gupta_Chouhan_2025}
+Atul Kachare, Chandrashekhar Goswami, Ashutosh Gupta, and D.S. Chouhan.
+\newblock Fnet-gpt: Fourier-based lightweight transformer for emotion-aware
+  text generation using gpt.
+\newblock {\em Future Technology}, 4(4):138–145, Aug. 2025.
+
+\bibitem{pereira2025classifying}
+Aaron Pereira.
+\newblock Classifying research project themes in the ec cordis database with
+  the help of llms.
+\newblock \url{http://solid-sustainability.org/topic-classification}, March
+  2025.
+\newblock Solid Sustainability Research, published 16 March 2025.
+
+\end{thebibliography}
