@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: oliveira.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: aaai2026.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Database file #1: custom.bib
+Warning--empty year in Ferlatti; set to ????
+`archiveprefix' is a missing field, not a string, for entry Sourati2023-bq
+while executing---line 1485 of file aaai2026.bst
+You've used 24 entries,
+            2840 wiz_defined-function locations,
+            738 strings with 9923 characters,
+and the built_in function-call counts, 15557 in all, are:
+= -- 1200
+> -- 967
+< -- 1
++ -- 357
+- -- 326
+* -- 1166
+:= -- 2646
+add.period$ -- 97
+call.type$ -- 24
+change.case$ -- 197
+chr.to.int$ -- 25
+cite$ -- 25
+duplicate$ -- 1011
+empty$ -- 931
+format.name$ -- 389
+if$ -- 2942
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 225
+newline$ -- 123
+num.names$ -- 98
+pop$ -- 513
+preamble$ -- 1
+purify$ -- 186
+quote$ -- 0
+skip$ -- 445
+stack$ -- 0
+substring$ -- 489
+swap$ -- 535
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 216
+warning$ -- 1
+while$ -- 113
+width$ -- 0
+write$ -- 305
+(There was 1 error message)
